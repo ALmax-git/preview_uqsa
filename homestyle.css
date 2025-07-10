@@ -103,7 +103,7 @@
       color: var(--default-color);
       background-color: var(--background-color);
       padding: 20px 0;
-      scroll-margin-top: 74px;
+      scroll-margin-top: 34px;
       overflow: clip;
     }
 
@@ -111,20 +111,20 @@
 
       section,
       .section {
-        scroll-margin-top: 82px;
+        scroll-margin-top: 42px;
       }
     }
 
     .section-title {
       text-align: center;
-      padding-bottom: 60px;
+      padding-bottom: 10px;
       position: relative;
     }
 
     .section-title h2 {
       font-size: 32px;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       position: relative;
       z-index: 1;
     }
@@ -136,7 +136,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 122px;
-      height: 66px;
+      height: 55px;
       background: url("./hero-3.png") no-repeat;
       z-index: -1;
     }
