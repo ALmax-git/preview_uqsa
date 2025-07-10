@@ -822,7 +822,7 @@
     .about .image-wrapper .small-image {
       position: absolute;
       top: 50%;
-      left: -30%;
+      right: -30%;
       width: 45%;
       border: 2px solid var(--surface-color);
     }
