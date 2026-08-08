@@ -1,1614 +1,2280 @@
-<html>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ummul-Qura Science Academy Azare</title>
+    <meta
+      name="description"
+      content="Ummul Qura Science Academy Azare - Nurturing young minds through academic excellence, STEM innovation, and strong Islamic moral values."
     />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link
-      id="vendor-css-glightbox"
-      rel="stylesheet"
-      href="https://builder.bootstrapmade.com/static/vendors/glightbox/css/glightbox.min.css?v=14"
-    />
-    <link
-      id="vendor-css-swiper"
-      rel="stylesheet"
-      href="https://builder.bootstrapmade.com/static/vendors/swiper/swiper-bundle.min.css?v=14"
-    />
-    <link
-      id="builder-icons-fontawesome-free"
-      rel="stylesheet"
-      href="https://builder.bootstrapmade.com/static/vendors/fontawesome-free/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://almax-git.github.io/preview_uqsa/homestyle.css"
-    />
-    <link
-      id="builder-main-style"
-      rel="stylesheet"
-      href="https://builder.bootstrapmade.com/assets/css/builder.css?v=713414175225.3.32-2025-02-14 11:00"
-    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              coffee: {
+                950: "#0F0704",
+                900: "#180C07",
+                850: "#21110B",
+                800: "#2B160E",
+                750: "#381C12",
+                700: "#472517",
+                600: "#5D311F",
+                500: "#7A412A",
+                400: "#A25739",
+                300: "#C87856",
+                200: "#E3A386",
+                100: "#F4D2C3",
+                50: "#FDF7F4",
+              },
+              amber: {
+                glow: "#E59847",
+                bright: "#F7B267",
+                soft: "#F8D0A2",
+              },
+              cream: {
+                50: "#FAF6F2",
+                100: "#F2E8DF",
+                200: "#E4D4C5",
+              },
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              heading: ["Space Grotesk", "sans-serif"],
+              arabic: ["Amiri", "serif"],
+            },
+            animation: {
+              "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "float-slow": "float 8s ease-in-out infinite",
+              "subway-glow": "subwayGlow 2s ease-in-out infinite alternate",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-12px)" },
+              },
+              subwayGlow: {
+                "0%": { boxShadow: "0 0 10px rgba(229,152,71,0.4)" },
+                "100%": { boxShadow: "0 0 25px rgba(229,152,71,0.9)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js CDN -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <style>
+      /* Custom Blissful Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #180c07;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #472517;
+        border-radius: 9999px;
+        border: 2px solid #180c07;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #e59847;
+      }
+
+      /* Glassmorphism Classes */
+      .glass-card {
+        background: rgba(33, 17, 11, 0.45);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(244, 210, 195, 0.12);
+      }
+      .glass-card-hover {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .glass-card-hover:hover {
+        background: rgba(43, 22, 14, 0.65);
+        border-color: rgba(229, 152, 71, 0.35);
+        transform: translateY(-4px);
+        box-shadow:
+          0 20px 40px -15px rgba(15, 7, 4, 0.7),
+          0 0 20px rgba(229, 152, 71, 0.15);
+      }
+      .glass-nav {
+        background: rgba(24, 12, 7, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(229, 152, 71, 0.15);
+      }
+
+      /* Text Gradient Glow */
+      .text-gradient-amber {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8d0a2 50%,
+          #e59847 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .text-gradient-coffee {
+        background: linear-gradient(135deg, #f4d2c3 0%, #e59847 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Subway Line Glow */
+      .subway-rail-line {
+        background: linear-gradient(
+          180deg,
+          rgba(229, 152, 71, 0.1) 0%,
+          rgba(229, 152, 71, 0.8) 50%,
+          rgba(229, 152, 71, 0.1) 100%
+        );
+      }
+    </style>
   </head>
 
   <body
-    class="index-page builder-mode"
-    data-aos-easing="ease-in-out"
-    data-aos-duration="600"
-    data-aos-delay="0"
+    x-data="subwayApp()"
+    x-init="initApp()"
+    @scroll.window="updateSubwayScroll()"
+    class="bg-coffee-950 text-cream-50 font-sans selection:bg-amber-glow selection:text-coffee-950 overflow-x-hidden relative min-h-screen"
   >
-    <header
-      id="header"
-      class="header d-flex align-items-center position-relative scroll-up-sticky"
-      data-builder="header"
-      data-js=" scrolled scroll-up-sticky"
-      style=""
+    <!-- AMBIENT BACKGROUND GLOW ORBS -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div
+        class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-coffee-700/20 rounded-full blur-[140px] animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute top-1/3 right-0 w-[500px] h-[500px] bg-amber-glow/10 rounded-full blur-[160px] animate-float-slow"
+      ></div>
+      <div
+        class="absolute bottom-10 left-10 w-[700px] h-[700px] bg-coffee-800/30 rounded-full blur-[180px]"
+      ></div>
+    </div>
+
+    <!-- SUBWAY STATION HUD / METRO SIDEBAR PROGRESS (Desktop) -->
+    <aside
+      class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-3 glass-card p-3 rounded-full border border-amber-glow/20 shadow-2xl shadow-coffee-950/80"
     >
       <div
-        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+        class="text-[10px] uppercase font-mono tracking-widest text-amber-glow font-semibold mb-1 rotate-90 my-2"
       >
-        <a href="/" class="logo d-flex align-items-center">
-          <h1 class="sitename">UQSA AZARE<br /></h1>
+        UQSA
+      </div>
+
+      <!-- Track Rail Line -->
+      <div class="relative flex flex-col items-center gap-4 py-2">
+        <div class="absolute top-0 bottom-0 w-0.5 bg-coffee-700/50"></div>
+        <div
+          class="absolute top-0 w-0.5 bg-amber-glow transition-all duration-300 rounded-full shadow-[0_0_8px_#E59847]"
+          :style="`height: ${scrollPercent}%;`"
+        ></div>
+
+        <template x-for="(st, index) in stations" :key="st.id">
+          <button
+            @click="navigateToStation(st.id)"
+            class="relative group flex items-center"
+            :title="st.name"
+          >
+            <!-- Label Tooltip -->
+            <span
+              class="absolute right-10 whitespace-nowrap px-3 py-1 rounded-lg text-xs font-medium glass-card border border-amber-glow/30 text-cream-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl"
+              x-text="st.code + ' • ' + st.name"
+            ></span>
+
+            <!-- Station Node Bullet -->
+            <div
+              class="w-4 h-4 rounded-full flex items-center justify-center transition-all duration-500 z-10"
+              :class="currentStation === st.id ? 'bg-amber-glow scale-125 shadow-[0_0_12px_#E59847]' : 'bg-coffee-800 hover:bg-coffee-600 border border-amber-glow/30'"
+            >
+              <div
+                class="w-1.5 h-1.5 rounded-full"
+                :class="currentStation === st.id ? 'bg-coffee-950 animate-ping' : 'bg-cream-100/50'"
+              ></div>
+            </div>
+          </button>
+        </template>
+      </div>
+
+      <button
+        @click="toggleAudio()"
+        class="mt-2 w-8 h-8 rounded-full flex items-center justify-center glass-card border border-amber-glow/30 text-amber-glow hover:bg-amber-glow hover:text-coffee-950 transition-colors"
+        :title="audioMuted ? 'Unmute Futuristic Ambience' : 'Mute Ambience'"
+      >
+        <i
+          class="bi"
+          :class="audioMuted ? 'bi-volume-mute' : 'bi-volume-up-fill'"
+        ></i>
+      </button>
+    </aside>
+
+    <!-- TOP BLISSFUL FUTURISTIC HEADER NAV -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-500"
+      :class="isScrolled ? 'py-3 shadow-2xl shadow-coffee-950/90 border-b border-amber-glow/20' : 'py-5'"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+      >
+        <!-- Logo & Branding -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div
+            class="relative w-12 h-12 rounded-2xl glass-card p-1.5 border border-amber-glow/40 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(229,152,71,0.2)]"
+          >
+            <img
+              src="logo-1.png"
+              onerror="this.src = 'logo.png'"
+              alt="UQSA Logo"
+              class="w-full h-full object-contain"
+            />
+            <div
+              class="absolute inset-0 bg-amber-glow/10 group-hover:bg-transparent transition-colors"
+            ></div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span
+                class="font-heading text-lg font-bold tracking-wider text-cream-50 group-hover:text-amber-bright transition-colors"
+              >
+                UQSA AZARE
+              </span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono tracking-widest bg-amber-glow/20 text-amber-bright rounded-full border border-amber-glow/40 uppercase"
+              >
+                EST 2011
+              </span>
+            </div>
+            <p class="text-xs font-arabic text-amber-soft/90 tracking-wide">
+              Ummul-Qura Science Academy
+            </p>
+          </div>
         </a>
 
+        <!-- Desktop Navigation Bar -->
         <nav
-          id="navmenu"
-          class="navmenu"
-          data-builder="navmenu"
-          data-js=" mobile-nav-toggle mobile-nav-dropdown"
+          class="hidden md:flex items-center gap-1 glass-card px-4 py-2 rounded-full border border-cream-100/10"
         >
-          <ul>
-            <li><a href="#hero" class="">Home</a></li>
-            <li><a href="#about" class="">About</a></li>
-            <li><a href="#services" class="">Services</a></li>
-            <li><a href="#portfolio" class="">Portfolio</a></li>
-            <li spellcheck="false">
-              <a href="#team" class="" spellcheck="false">Team</a>
-            </li>
-
-            <li spellcheck="false">
-              <a href="#contact" spellcheck="false">Contact</a>
-            </li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-      </div>
-    </header>
-    <main class="main" id="page-sjhdfjhdsjh" data-name="index">
-      <slot type="page-title"></slot>
-
-      <div
-        id="section-2HBzE5t5n2"
-        class="builder-section-wrap position-relative"
-        data-js=" glightbox"
-      >
-        <section
-          id="hero-2"
-          class="hero-2 section"
-          data-builder="section"
-          data-colorpreset="cp-dark-background"
-        >
-          <img
-            src="https://almax-git.github.io/preview_uqsa/hero-4.png"
-            alt=""
-            data-aos="fade-in"
-            class="aos-init aos-animate"
-          />
-
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-10" style="text-align: center">
-                <h2
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  class="aos-init aos-animate h1"
-                  style="font-weight: bolder"
-                >
-                  Welcome to Ummul-Qura Science Academy Azare
-                </h2>
-                <h1
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  class="aos-init aos-animate text-primary"
-                  style="font-size: 4rem; font-weight: bolder"
-                >
-                  هدفنا تربية الأولاد
-                </h1>
-              </div>
-              <!-- <div class="col-lg-5">
-              <form action="forms/newsletter.php" method="post" class="php-email-form">
-                <div class="sign-up-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-              </form>
-            </div> -->
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-Hg0hnB6bsB"
-        class="builder-section-wrap position-relative"
-      >
-        <section id="about" class="about section" data-builder="section">
-          <slot type="section-title"></slot>
-
-          <div
-            class="container aos-init aos-animate"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="row gy-4 align-items-center justify-content-between">
-              <div
-                class="col-xl-5 aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <span class="about-meta">MORE ABOUT US</span>
-                <h2 class="about-title text-white">
-                  Inspiring Excellence Through Knowledge & Values
-                </h2>
-                <p class="about-description text-white">
-                  Ummul Qura Science Academy is a forward-thinking institution
-                  dedicated to nurturing young minds through a blend of academic
-                  excellence, scientific curiosity, and strong moral
-                  foundations. Our mission is to develop future leaders who are
-                  not only intellectually equipped but also ethically grounded
-                  and socially responsible.
-                </p>
-
-                <div class="row feature-list-wrapper">
-                  <div class="col-md-6">
-                    <ul class="feature-list">
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Holistic
-                        academic curriculum
-                      </li>
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Strong emphasis
-                        on STEM education
-                      </li>
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Integrated
-                        Islamic studies
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="feature-list">
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Qualified &
-                        passionate educators
-                      </li>
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Safe, inclusive
-                        learning environment
-                      </li>
-                      <li>
-                        <i class="bi bi-check-circle-fill"></i> Values-driven
-                        student development
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="info-wrapper">
-                  <div class="row gy-4">
-                    <div class="col-lg-5">
-                      <div class="profile d-flex align-items-center gap-3">
-                        <img
-                          src="https://almax-git.github.io/preview_uqsa/director.png"
-                          alt="CEO Profile"
-                          class="profile-image"
-                        />
-                        <div>
-                          <h4 class="profile-name text-white">
-                            Jibril Shirama
-                          </h4>
-                          <p class="profile-position">Director &amp; Founder</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-7">
-                      <div class="contact-info d-flex align-items-center gap-2">
-                        <i class="bi bi-telephone-fill"></i>
-                        <div>
-                          <p class="contact-label">Call us anytime</p>
-                          <p class="contact-number">+234 80 6527 9069</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="col-xl-6 aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="image-wrapper">
-                  <div
-                    class="images position-relative aos-init aos-animate"
-                    data-aos="zoom-out"
-                    data-aos-delay="400"
-                  >
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/director.png"
-                      alt="Business Meeting"
-                      class="img-fluid main-image rounded-4"
-                      style="height: 80vh; object-fit: contain"
-                    />
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/logo-1.png"
-                      alt="Team Discussion"
-                      class="img-fluid small-image rounded-4"
-                    />
-                  </div>
-                  <div class="experience-badge floating">
-                    <h3>15+ <span>Years</span></h3>
-                    <p>Of experience in business service</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-BZ9Eqb5WLE"
-        class="builder-section-wrap position-relative"
-      >
-        <section id="services" class="services section" data-builder="section">
-          <div
-            class="container section-title aos-init aos-animate"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h3 style="color: white">Our Mission</h3>
-            <p>
-              Our mission is to provide a comprehensive education that
-              cultivates Islamic values, integrity, and discipline in our
-              students, empowering them to become responsible, compassionate,
-              and successful individuals who make a positive impact in their
-              communities and the world at large
-            </p>
-            <h3 style="color: white">Our vision</h3>
-            <p>
-              Our vision is to be a leading Modern Islamic school that inspires
-              students to excel academically, spiritually, and morally,
-              fostering a community of learners who embody the principles of
-              Islam, demonstrate high ethical standards, and become role models
-              for others
-            </p>
-            <h3 style="color: white">Services</h3>
-            <p>
-              We are dedicated to delivering exceptional education that inspires
-              knowledge, fosters creativity, and builds strong character
-            </p>
-          </div>
-
-          <slot type="section-title"></slot>
-
-          <div class="container">
-            <div class="row gy-4">
-              <div
-                class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div class="service-item position-relative">
-                  <div class="icon"><i class="bi bi-activity icon"></i></div>
-                  <h4>
-                    <a href="#" class="stretched-link">Quality Education</a>
-                  </h4>
-                  <p spellcheck="false">
-                    We offer a well-structured curriculum that ensures students
-                    receive a strong academic foundation in all subjects
-                  </p>
-                </div>
-              </div>
-              <!-- End Service Item -->
-
-              <div
-                class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-bounding-box-circles icon"></i>
-                  </div>
-                  <h4 spellcheck="false">
-                    <a href="#" class="stretched-link" spellcheck="false"
-                      >STEM Education</a
-                    >
-                  </h4>
-                  <p spellcheck="false">
-                    We emphasize Science, Technology, Engineering, and
-                    Mathematics to prepare students for the future.
-                  </p>
-                </div>
-              </div>
-              <!-- End Service Item -->
-
-              <div
-                class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-balloon-heart icon"></i>
-                  </div>
-                  <h4>
-                    <a href="#" class="stretched-link">Student Support</a>
-                  </h4>
-                  <p spellcheck="false">
-                    We provide counseling, mentorship, and guidance to support
-                    students in their academic and personal growth.
-                  </p>
-                </div>
-              </div>
-              <!-- End Service Item -->
-
-              <div
-                class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="service-item position-relative">
-                  <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-                  <h4>
-                    <a href="#" class="stretched-link"
-                      >Extracurricular Activities</a
-                    >
-                  </h4>
-                  <p spellcheck="false">
-                    Students engage in clubs, competitions, and other activities
-                    that build confidence and teamwork skills.
-                  </p>
-                </div>
-              </div>
-              <!-- End Service Item -->
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-bm2UkrIxfs"
-        class="builder-section-wrap position-relative"
-        data-js=" purecounter"
-      >
-        <section
-          id="stats"
-          class="stats section"
-          data-builder="section"
-          data-colorpreset="cp-light-background"
-        >
-          <slot type="section-title"></slot>
-
-          <div
-            class="container aos-init aos-animate"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="row gy-4">
-              <div class="col-lg-3 col-md-6">
-                <div class="stats-item">
-                  <i class="bi bi-emoji-smile"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="2038"
-                    data-purecounter-duration="5"
-                    class="purecounter"
-                    data-no-editable="true"
-                    >--</span
-                  >
-                  <p>
-                    <strong>Total Students</strong>
-                    <span>Leaders of Tomorrow</span>
-                  </p>
-                </div>
-              </div>
-              <!-- End Stats Item -->
-
-              <div class="col-lg-3 col-md-6">
-                <div class="stats-item">
-                  <i class="bi bi-journal-richtext"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="131400"
-                    data-purecounter-duration="15"
-                    class="purecounter"
-                    data-no-editable="true"
-                    >--</span
-                  >
-                  <p><strong>Total Study Hours</strong></p>
-                </div>
-              </div>
-              <!-- End Stats Item -->
-
-              <div class="col-lg-3 col-md-6">
-                <div class="stats-item">
-                  <i class="bi bi-headset"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="1453"
-                    data-purecounter-duration="10"
-                    class="purecounter"
-                    data-no-editable="true"
-                    >--</span
-                  >
-                  <p><strong>Students Graduated</strong></p>
-                </div>
-              </div>
-              <!-- End Stats Item -->
-
-              <div class="col-lg-3 col-md-6">
-                <div class="stats-item">
-                  <i class="bi bi-people"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end=" 164"
-                    data-purecounter-duration="4"
-                    class="purecounter"
-                    data-no-editable="true"
-                    >--</span
-                  >
-                  <p><strong>Hard Workers</strong></p>
-                </div>
-              </div>
-              <!-- End Stats Item -->
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-lAGURvB8tg"
-        class="builder-section-wrap position-relative"
-      >
-        <section
-          id="call-to-action"
-          class="call-to-action section"
-          data-builder="section"
-          data-colorpreset="cp-wXAGIdL0jw"
-        >
-          <img src="https://almax-git.github.io/preview_uqsa/hero.png" alt="" />
-
-          <div class="container">
-            <div
-              class="row justify-content-center aos-init aos-animate"
-              data-aos="zoom-in"
-              data-aos-delay="100"
+          <template x-for="st in stations" :key="st.id">
+            <a
+              :href="'#' + st.id"
+              @click.preventDefault="navigateToStation(st.id)"
+              class="px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 flex items-center gap-1.5"
+              :class="currentStation === st.id ? 'bg-amber-glow text-coffee-950 font-semibold shadow-[0_0_15px_rgba(229,152,71,0.4)]' : 'text-cream-200/80 hover:text-cream-50 hover:bg-coffee-800/50'"
             >
-              <div class="col-xl-10">
-                <div class="text-center">
-                  <h3 spellcheck="false">Call To Action</h3>
-                  <p spellcheck="false">
-                    Join Ummul Qura Science Academy in shaping future innovators
-                    and leaders. Enroll today to experience a nurturing
-                    environment where academic excellence, creativity, and
-                    strong moral values come together. Your child’s journey to
-                    success starts here!
-                  </p>
-
-                  <a class="cta-btn" href="#" spellcheck="false"
-                    >Call To Action</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-rWTOx33NuJ"
-        class="builder-section-wrap position-relative"
-        data-js=" glightbox isotope-layout"
-      >
-        <section
-          id="portfolio"
-          class="portfolio section"
-          data-builder="section"
-        >
-          <div
-            class="container section-title aos-init aos-animate"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h2 style="color: aliceblue">Portfolio</h2>
-            <p>Expert Faculty: Highly qualified and experienced educators.</p>
-          </div>
-
-          <slot type="section-title"></slot>
-
-          <div class="container">
-            <div
-              class="isotope-layout"
-              data-default-filter="*"
-              data-layout="masonry"
-              data-sort="original-order"
-            >
-              <div
-                class="row gy-4 isotope-container aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                style="position: relative; height: 1039.8px"
-              >
-                <div
-                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-                >
-                  <img
-                    src="https://almax-git.github.io/preview_uqsa/galary/11.png"
-                    class="img-fluid"
-                    alt=""
-                    style="height: 50vh; object-fit: fill"
-                  />
-                  <div class="portfolio-info">
-                    <h4></h4>
-                    <p></p>
-                    <a
-                      href="https://almax-git.github.io/preview_uqsa/galary/11.png"
-                      title="Branding 2"
-                      data-gallery="portfolio-gallery-branding"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-                <!-- End Portfolio Item -->
-
-                <div
-                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
-                >
-                  <img
-                    src="https://almax-git.github.io/preview_uqsa/galary/4.png"
-                    class="img-fluid"
-                    alt=""
-                    style="height: 50vh; object-fit: fill"
-                  />
-                  <div class="portfolio-info">
-                    <h4></h4>
-                    <p></p>
-                    <a
-                      href="https://almax-git.github.io/preview_uqsa/galary/4.png"
-                      title="Product 3"
-                      data-gallery="portfolio-gallery-product"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-                <!-- End Portfolio Item -->
-
-                <div
-                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-                >
-                  <img
-                    src="https://almax-git.github.io/preview_uqsa/galary/12.png"
-                    class="img-fluid"
-                    alt=""
-                    style="height: 50vh; object-fit: fill"
-                  />
-                  <div class="portfolio-info">
-                    <h4></h4>
-                    <p></p>
-                    <a
-                      href="https://almax-git.github.io/preview_uqsa/galary/12.png"
-                      title="Branding 3"
-                      data-gallery="portfolio-gallery-book"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-                <!-- End Portfolio Item -->
-              </div>
-              <!-- End Portfolio Container -->
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-XCNFH32Xjr"
-        class="builder-section-wrap position-relative"
-        data-js=" init-swiper"
-      >
-        <section
-          id="testimonials"
-          class="testimonials section"
-          data-builder="section"
-          data-colorpreset="cp-light-background"
-        >
-          <div
-            class="container section-title aos-init aos-animate"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h2 spellcheck="false">Testimonials</h2>
-            <p>What People are saying About Us</p>
-          </div>
-
-          <slot type="section-title"></slot>
-
-          <div
-            class="container aos-init aos-animate"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            data-no-editable="true"
-          >
-            <div
-              class="swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
-            >
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  },
-                  "breakpoints": {
-                    "320": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 40
-                    },
-                    "1200": {
-                      "slidesPerView": 3,
-                      "spaceBetween": 1
-                    }
-                  }
-                }
-              </script>
-              <div
-                class="swiper-wrapper"
-                id="swiper-wrapper-ed226230de8dbc70"
-                aria-live="off"
-                style="
-                  transition-duration: 600ms;
-                  transform: translate3d(-374px, 0px, 0px);
-                "
-              >
-                <div
-                  class="swiper-slide swiper-slide-prev"
-                  style="width: 373px; margin-right: 1px"
-                  role="group"
-                  aria-label="5 / 5"
-                  data-swiper-slide-index="4"
-                >
-                  <div class="testimonial-item">
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span
-                        >Ummul Qura Science Academy (UQSA) was the bedrock of my
-                        career as a Web Developer and Ethical Hacker. The strong
-                        foundation in problem-solving and analytical thinking I
-                        gained, especially in Physics under Mr. Yusuf, equipped
-                        me with the skills to tackle complex challenges in tech.
-                        UQSA also instilled core values from my Qur’anic
-                        background, which continues to guide my ethical approach
-                        in cybersecurity and development. Grateful for the solid
-                        start UQSA gave me.
-                        <br />
-                        May Allah continue to bless UQSA and all those who
-                        contributed to my growth, granting them success in this
-                        world and the Hereafter.</span
-                      >
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/testimonials/1.png"
-                      class="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Ali Mustapha Shettima</h3>
-                    <h4>
-                      Web Developer &
-                      <span style="color: red">Echical Hacker</span>
-                    </h4>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide swiper-slide-active"
-                  style="width: 373px; margin-right: 1px"
-                  role="group"
-                  aria-label="1 / 5"
-                  data-swiper-slide-index="0"
-                >
-                  <div class="testimonial-item">
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span
-                        >Ummul-Qura Makaranta ce da take dauke da bangarori guda
-                        uku, wato Nursery, Primary da kuma Secondary. Ummul-Qura
-                        makaranta ce da aka gina ta domin tarbiyyar al'umma.
-                        Shugaban wannan makaranta yana karfafa tarbiyyar yara
-                        fiye da komai sabo da idan aka tarbiyyantar da yara a
-                        nan ne zasu samu ilimi mai amfani. A fannin ilimi kuma
-                        Ummul-Qura tana iya kokarinta wajen samar da kayan aiki
-                        na zamani domin inganta ilimi a makaranta.
-                      </span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/testimonials/2.png"
-                      class="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Balkisu Muhammad</h3>
-                    <h4>Form mistress of Primary 6B</h4>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide swiper-slide-prev"
-                  style="width: 373px; margin-right: 1px"
-                  role="group"
-                  aria-label="5 / 5"
-                  data-swiper-slide-index="4"
-                >
-                  <div class="testimonial-item">
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span
-                        >Ummul Qura Science Academy (UQSA) was the bedrock of my
-                        career as a Web Developer and Ethical Hacker. The strong
-                        foundation in problem-solving and analytical thinking I
-                        gained, especially in Physics under Malan. Yusuf,
-                        equipped me with the skills to tackle complex challenges
-                        in tech. UQSA also instilled core values from my
-                        Qur’anic background, which continues to guide my ethical
-                        approach in cybersecurity and development. Grateful for
-                        the solid start UQSA gave me.
-                        <br />
-                        <small
-                          >May Allah continue to bless UQSA and all those who
-                          contributed to my growth, granting them success in
-                          this world and the Hereafter</small
-                        >.</span
-                      >
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/testimonials/1.png"
-                      class="testimonial-img"
-                      alt=""
-                      style="object-fit: fill"
-                      width="100px"
-                      height="100px;"
-                    />
-                    <h3>Ali Mustapha Shettima</h3>
-                    <h4>
-                      Web Developer &
-                      <span style="color: red">Echical Hacker</span>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
-              >
-                <span
-                  class="swiper-pagination-bullet swiper-pagination-bullet-active"
-                  tabindex="0"
-                  role="button"
-                  aria-label="Go to slide 1"
-                  aria-current="true"
-                ></span
-                ><span
-                  class="swiper-pagination-bullet"
-                  tabindex="0"
-                  role="button"
-                  aria-label="Go to slide 2"
-                ></span
-                ><span
-                  class="swiper-pagination-bullet"
-                  tabindex="0"
-                  role="button"
-                  aria-label="Go to slide 3"
-                ></span
-                ><span
-                  class="swiper-pagination-bullet"
-                  tabindex="0"
-                  role="button"
-                  aria-label="Go to slide 4"
-                ></span
-                ><span
-                  class="swiper-pagination-bullet"
-                  tabindex="0"
-                  role="button"
-                  aria-label="Go to slide 5"
-                ></span>
-              </div>
-              <span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span
-              ><span
-                class="swiper-notification"
-                aria-live="assertive"
-                aria-atomic="true"
-              ></span>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-TIKtUIb8h2"
-        class="builder-section-wrap position-relative"
-      >
-        <section id="team" class="team section" data-builder="section">
-          <div
-            class="container section-title aos-init aos-animate"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h2 style="color: aliceblue">Team</h2>
-          </div>
-
-          <slot type="section-title"></slot>
-
-          <div
-            class="container aos-init aos-animate"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="row gy-5">
-              <div
-                class="col-xl-4 col-md-6 d-flex aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-              >
-                <div class="team-member">
-                  <div class="member-img">
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/principal_primary_section.png"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="member-info">
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                    <h4>Aminu Suleiman</h4>
-                    <span spellcheck="false" class=""
-                      >Principal Primary Section</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- End Team Member -->
-
-              <div
-                class="col-xl-4 col-md-6 d-flex aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-delay="400"
-              >
-                <div class="team-member">
-                  <div class="member-img">
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/principal_lady.png"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="member-info">
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                    <h4 spellcheck="false">Amina Yunusa Idi</h4>
-                    <span spellcheck="false" class=""
-                      >Principal Grils Section</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- End Team Member -->
-
-              <div
-                class="col-xl-4 col-md-6 d-flex aos-init aos-animate"
-                data-aos="zoom-in"
-                data-aos-delay="600"
-              >
-                <div class="team-member">
-                  <div class="member-img">
-                    <img
-                      src="https://almax-git.github.io/preview_uqsa/principal_secondary.png"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="member-info">
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                    <h4 spellcheck="false">Abdullahi Aliyu</h4>
-                    <span spellcheck="false" class=""
-                      >Principal Boys Section</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="section-OUCORlM7Dt"
-        class="builder-section-wrap position-relative"
-      >
-        <section
-          id="call-to-action-2"
-          class="call-to-action-2 section"
-          data-builder="section"
-          data-colorpreset="cp-dark-background"
-        >
-          <div
-            class="container aos-init aos-animate"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div
-              class="cta-box text-center aos-init aos-animate"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <div class="background-overlay">
-                <img
-                  src="https://almax-git.github.io/preview_uqsa/hero-1.png"
-                  alt=""
-                  class="background-image"
-                />
-              </div>
-
-              <div class="content position-relative">
-                <h2
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  class="aos-init aos-animate"
-                  spellcheck="false"
-                >
-                  Elevate Your Child's Educational Journey with Ummul Qura
-                  Science Academy
-                </h2>
-
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                  class="aos-init aos-animate"
-                >
-                  Unlock your child's full potential with our comprehensive
-                  curriculum that seamlessly integrates academic excellence,
-                  moral values, and scientific inquiry. Join a community of
-                  dedicated educators and thriving students committed to shaping
-                  future leaders.
-                </p>
-
-                <div
-                  class="cta-buttons aos-init aos-animate"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  <a href="#" class="btn-cta"
-                    ><span>Get Started</span> <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div id="section-faq" class="builder-section-wrap position-relative">
-        <section
-          id="faq"
-          class="faq section"
-          data-builder="section"
-          data-colorpreset="cp-light-background"
-        >
-          <div
-            class="container section-title aos-init aos-animate"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h2>Frequently Asked Questions</h2>
-            <p>
-              Find answers to common questions about Ummul Qura Science Academy.
-            </p>
-          </div>
-
-          <div class="container">
-            <!-- F.A.Q Item-->
-            <div
-              class="row faq-item aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="col-lg-5 d-flex">
-                <i class="bi bi-question-circle"></i>
-                <h4>Where is Ummul Qura Science Academy located?</h4>
-              </div>
-              <div class="col-lg-7">
-                <p>
-                  Ummul Qura Science Academy is located opposite State Lowcost,
-                  Old Kano Road, Azare, Bauchi State, Nigeria.
-                </p>
-              </div>
-            </div>
-            <!-- End F.A.Q Item-->
-
-            <!-- F.A.Q Item-->
-            <div
-              class="row faq-item aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="col-lg-5 d-flex">
-                <i class="bi bi-question-circle"></i>
-                <h4>What educational levels does the academy offer?</h4>
-              </div>
-              <div class="col-lg-7">
-                <p>
-                  The academy offers Nursery, Primary, and Secondary education
-                  levels.
-                </p>
-              </div>
-            </div>
-            <!-- End F.A.Q Item-->
-
-            <!-- F.A.Q Item-->
-            <div
-              class="row faq-item aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="col-lg-5 d-flex">
-                <i class="bi bi-question-circle"></i>
-                <h4>Is Ummul Qura Science Academy a day or boarding school?</h4>
-              </div>
-              <div class="col-lg-7">
-                <p>Ummul Qura Science Academy operates as a day school.</p>
-              </div>
-            </div>
-            <!-- End F.A.Q Item-->
-
-            <!-- F.A.Q Item-->
-            <div
-              class="row faq-item aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div class="col-lg-5 d-flex">
-                <i class="bi bi-question-circle"></i>
-                <h4>How can I contact the academy for admissions?</h4>
-              </div>
-              <div class="col-lg-7">
-                <p>
-                  For admission inquiries, you can contact the academy via it
-                  official platforms
-                </p>
-              </div>
-            </div>
-            <!-- End F.A.Q Item-->
-
-            <!-- F.A.Q Item-->
-            <div
-              class="row faq-item aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div class="col-lg-5 d-flex">
-                <i class="bi bi-question-circle"></i>
-                <h4>Does the academy have any notable achievements?</h4>
-              </div>
-              <div class="col-lg-7">
-                <p>
-                  Yes, Ummul Qura Science Academy constructed 45 toilet
-                  facilities to improve Water, Sanitation, and Hygiene (WASH)
-                  standards, demonstrating its commitment to student and staff
-                  well-being.
-                </p>
-              </div>
-            </div>
-            <!-- End F.A.Q Item-->
-          </div>
-        </section>
-      </div>
-
-      <div
-        id="section-0o1Nr09RJI"
-        class="builder-section-wrap position-relative"
-      >
-        <section id="contact" class="contact section" data-builder="section">
-          <div
-            class="container section-title aos-init"
-            data-aos="fade-up"
-            data-builder="section-title"
-          >
-            <h2 style="color: aliceblue">Contact</h2>
-            <p>
-              Have any questions or inquiries? Reach out to us, and our team
-              will respond as soon as possible.
-            </p>
-          </div>
-
-          <slot type="section-title"></slot>
-
-          <div
-            class="container aos-init"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="row gy-4">
-              <div class="col-lg-6">
-                <div class="info-wrap">
-                  <div
-                    class="info-item d-flex aos-init"
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                  >
-                    <i class="bi bi-geo-alt flex-shrink-0"></i>
-                    <div>
-                      <h3>Address</h3>
-                      <p>Old Kano Kano Road Azare 751101, Bauchi<br /></p>
-                    </div>
-                  </div>
-                  <!-- End Info Item -->
-
-                  <div
-                    class="info-item d-flex aos-init"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    <i class="bi bi-telephone flex-shrink-0"></i>
-                    <div>
-                      <h3>Call Us</h3>
-                      <p>+234 80 6527 9069<br /></p>
-                    </div>
-                  </div>
-                  <!-- End Info Item -->
-
-                  <div
-                    class="info-item d-flex aos-init"
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                  >
-                    <i class="bi bi-envelope flex-shrink-0"></i>
-                    <div>
-                      <h3>Email Us</h3>
-                      <p>support@uqsaazare.sch.ng</p>
-                    </div>
-                  </div>
-                  <!-- End Info Item -->
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d458.6246320201145!2d10.173963913617742!3d11.662349874953899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sng!4v1744183697302!5m2!1sen!2sng"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer id="footer" class="footer position-relative" data-builder="footer">
-      <div class="container footer-top">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 footer-about">
-            <a href="/" class="logo d-flex align-items-center">
-              <span class="sitename">UQSA AZARE</span>
+              <span x-text="st.name"></span>
             </a>
-            <div class="footer-contact pt-3">
-              <p>Old Kano Kano Road Azare 751101, Bauchi</p>
-              <p>Bauchi State Nigeria<br /></p>
-              <p class="mt-3"><strong>Phone:</strong>&nbsp;+234 80 6527 9069</p>
-              <p>
-                <strong>Email:</strong> <span>support@uqsaazare.sch.ng</span>
-              </p>
-            </div>
-            <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
+          </template>
+        </nav>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+        <!-- CTA & Controls -->
+        <div class="flex items-center gap-3">
+          <!-- Admission Teleport Button -->
+          <button
+            @click="openAdmissionModal = true"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-coffee-600 via-amber-glow to-coffee-600 text-coffee-950 font-semibold text-xs tracking-wider uppercase shadow-lg shadow-amber-glow/20 hover:shadow-amber-glow/40 hover:scale-105 active:scale-95 transition-all duration-300"
+          >
+            <i class="bi bi-rocket-takeoff-fill"></i>
+            <span>My Results</span>
+          </button>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <!-- 
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-            --></ul>
-          </div>
-
-          <div class="col-lg-4 col-md-12 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>
-              Subscribe to our newsletter and receive the latest news about our
-              products and services!
-            </p>
-            <form
-              action="forms/newsletter.php"
-              method="post"
-              class="php-email-form"
-            >
-              <div class="newsletter-form">
-                <input type="email" name="email" /><input
-                  type="submit"
-                  value="Subscribe"
-                />
-              </div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Your subscription request has been sent. Thank you!
-              </div>
-            </form>
-          </div>
+          <!-- Mobile Menu Trigger -->
+          <button
+            @click="mobileNavOpen = !mobileNavOpen"
+            class="md:hidden w-10 h-10 rounded-2xl glass-card border border-amber-glow/30 flex items-center justify-center text-cream-50 text-xl"
+            aria-label="Toggle Navigation"
+          >
+            <i
+              class="bi"
+              :class="mobileNavOpen ? 'bi-x-lg' : 'bi-distribute-vertical'"
+            ></i>
+          </button>
         </div>
       </div>
 
-      <div class="container copyright text-center mt-4">
-        <p>
-          © <span>Copyright</span>
-          <strong class="px-1 sitename">UQSA AZARE</strong>
-          <span>All Rights Reserved Powered By Cyber Net System<br /></span>
-        </p>
+      <!-- Mobile Navigation Drawer -->
+      <div
+        x-show="mobileNavOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-4"
+        class="md:hidden glass-nav border-t border-amber-glow/20 px-6 py-6 mt-2 space-y-3"
+      >
+        <div
+          class="text-xs uppercase font-mono tracking-widest text-amber-glow mb-2"
+        >
+          Campus Navigation
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <template x-for="st in stations" :key="st.id">
+            <a
+              :href="'#' + st.id"
+              @click="navigateToStation(st.id); mobileNavOpen = false"
+              class="px-4 py-2.5 rounded-xl text-xs font-medium glass-card border flex items-center gap-2"
+              :class="currentStation === st.id ? 'border-amber-glow bg-amber-glow/20 text-amber-bright' : 'border-cream-100/10 text-cream-200'"
+            >
+              <span
+                class="font-mono text-[10px] text-amber-glow"
+                x-text="st.code"
+              ></span>
+              <span x-text="st.name"></span>
+            </a>
+          </template>
+        </div>
+        <button
+          @click="openAdmissionModal = true; mobileNavOpen = false"
+          class="w-full py-3 rounded-xl bg-amber-glow text-coffee-950 font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 mt-4"
+        >
+          <i class="bi bi-rocket-takeoff-fill"></i>
+          <span>My Results</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SUBWAY METRO TICKER BANNER -->
+    <div
+      class="fixed bottom-0 inset-x-0 z-30 pointer-events-none bg-gradient-to-t from-coffee-950 to-transparent pt-12 pb-2"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between pointer-events-auto"
+      >
+        <div
+          class="glass-card px-4 py-1.5 rounded-full border border-amber-glow/20 flex items-center gap-3 shadow-2xl backdrop-blur-xl text-xs"
+        >
+          <span class="flex h-2 w-2 relative">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-glow opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-amber-glow"
+            ></span>
+          </span>
+          <span
+            class="font-mono text-[11px] text-amber-soft uppercase tracking-wider"
+          >
+            STATION ARRIVAL:
+            <strong
+              class="text-cream-50 uppercase"
+              x-text="getCurrentStationInfo().name"
+            ></strong>
+          </span>
+          <span
+            class="hidden sm:inline font-mono text-[10px] text-cream-200/60 border-l border-cream-100/20 pl-3"
+            x-text="getCurrentStationInfo().desc"
+          ></span>
+        </div>
+
+        <button
+          @click="scrollToNextStation()"
+          class="glass-card px-3 py-1.5 rounded-full border border-amber-glow/30 text-xs font-mono text-amber-bright hover:bg-amber-glow hover:text-coffee-950 transition-all flex items-center gap-2"
+        >
+          <span>NEXT STATION</span>
+          <i class="bi bi-arrow-down-short text-base"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT SECTIONS -->
+    <main class="relative z-10 pt-24 pb-20">
+      <!-- ================= STATION 01: HERO TERMINAL ================= -->
+      <section
+        id="hero"
+        class="min-h-[92vh] flex items-center relative px-4 sm:px-6 lg:px-8 overflow-hidden py-12"
+      >
+        <div
+          class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
+          <!-- Left Hero Text Column -->
+          <div class="lg:col-span-7 space-y-8 text-left z-10">
+            <!-- Arabic Tagline Highlight -->
+            <div
+              class="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl glass-card border border-amber-glow/40 shadow-inner"
+            >
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-amber-glow animate-pulse"
+              ></span>
+              <h2
+                class="font-arabic text-2xl md:text-3xl text-amber-bright font-bold tracking-wide"
+              >
+                هدفنا تربية الأولاد
+              </h2>
+              <span
+                class="text-xs text-cream-200/70 font-sans border-l border-cream-100/20 pl-3 hidden sm:inline"
+              >
+                "Our Goal is Educating & Nurturing Youth"
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="space-y-4">
+              <h1
+                class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]"
+              >
+                Welcome to <br />
+                <span class="text-gradient-amber">Ummul-Qura</span> <br />
+                <span
+                  class="text-cream-50 font-light text-3xl sm:text-5xl lg:text-6xl"
+                  >Science Academy Azare</span
+                >
+              </h1>
+              <p
+                class="text-base sm:text-lg text-cream-200/80 max-w-2xl font-light leading-relaxed"
+              >
+                Step into the future of education. UQSA synthesizes cutting-edge
+                STEM technology, rigorous academic mastery, and timeless Islamic
+                moral values to shape tomorrow’s leaders and innovators.
+              </p>
+            </div>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <button
+                @click="navigateToStation('about')"
+                class="px-8 py-4 rounded-2xl bg-amber-glow hover:bg-amber-bright text-coffee-950 font-bold text-sm uppercase tracking-wider shadow-xl shadow-amber-glow/20 hover:shadow-amber-glow/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center gap-3"
+              >
+                <span>Explore Future Campus</span>
+                <i class="bi bi-arrow-right-circle-fill text-lg"></i>
+              </button>
+
+              <button
+                @click="openAdmissionModal = true"
+                class="px-8 py-4 rounded-2xl glass-card hover:bg-coffee-800/80 text-cream-50 font-semibold text-sm border border-amber-glow/30 hover:border-amber-glow transition-all duration-300 flex items-center gap-2"
+              >
+                <i class="bi bi-clipboard2-check-fill text-amber-glow"></i>
+                <span>My Results</span>
+              </button>
+            </div>
+
+            <!-- Hero Live Metro Ticker Stats -->
+            <div
+              class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-cream-100/10"
+            >
+              <div
+                class="glass-card p-4 rounded-2xl border border-cream-100/10 text-center sm:text-left"
+              >
+                <div class="font-heading text-2xl font-bold text-amber-bright">
+                  2,038+
+                </div>
+                <div
+                  class="text-[11px] text-cream-200/70 font-mono uppercase tracking-wider mt-0.5"
+                >
+                  Enrolled Leaders
+                </div>
+              </div>
+              <div
+                class="glass-card p-4 rounded-2xl border border-cream-100/10 text-center sm:text-left"
+              >
+                <div class="font-heading text-2xl font-bold text-cream-50">
+                  131.4K
+                </div>
+                <div
+                  class="text-[11px] text-cream-200/70 font-mono uppercase tracking-wider mt-0.5"
+                >
+                  STEM Hours
+                </div>
+              </div>
+              <div
+                class="glass-card p-4 rounded-2xl border border-cream-100/10 text-center sm:text-left"
+              >
+                <div class="font-heading text-2xl font-bold text-amber-bright">
+                  1,453+
+                </div>
+                <div
+                  class="text-[11px] text-cream-200/70 font-mono uppercase tracking-wider mt-0.5"
+                >
+                  Alumni Graduated
+                </div>
+              </div>
+              <div
+                class="glass-card p-4 rounded-2xl border border-cream-100/10 text-center sm:text-left"
+              >
+                <div class="font-heading text-2xl font-bold text-cream-50">
+                  164+
+                </div>
+                <div
+                  class="text-[11px] text-cream-200/70 font-mono uppercase tracking-wider mt-0.5"
+                >
+                  Expert Staff
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual Holo Card -->
+          <div class="lg:col-span-5 relative z-10">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- Holographic Outer Ring -->
+              <div
+                class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-amber-glow/30 via-coffee-600/20 to-transparent blur-2xl animate-pulse-slow"
+              ></div>
+
+              <!-- Main Floating Hero Card -->
+              <div
+                class="glass-card p-4 rounded-3xl border border-amber-glow/40 shadow-2xl relative overflow-hidden group"
+              >
+                <div
+                  class="relative h-[420px] rounded-2xl overflow-hidden bg-coffee-900"
+                >
+                  <img
+                    src="hero-4.png"
+                    onerror="this.src = 'hero.png'"
+                    alt="UQSA Future Campus"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-coffee-950/40 to-transparent"
+                  ></div>
+
+                  <!-- Overlay Badge -->
+                  <div
+                    class="absolute bottom-6 inset-x-6 glass-card p-4 rounded-2xl border border-amber-glow/30 backdrop-blur-md"
+                  >
+                    <div class="flex items-center justify-between mb-1">
+                      <span
+                        class="text-xs font-mono uppercase text-amber-bright font-bold tracking-widest"
+                        >SECTION 01</span
+                      >
+                      <span
+                        class="text-[10px] font-mono bg-amber-glow/20 px-2 py-0.5 rounded text-amber-soft"
+                        >AZARE, BAUCHI</span
+                      >
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-cream-50">
+                      Science & Moral Paradigm
+                    </h3>
+                    <p class="text-xs text-cream-200/80 line-clamp-2 mt-1">
+                      Empowering students with modern lab technologies, Quranic
+                      memorization, and critical ethical leadership.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Micro-Badge -->
+              <div
+                class="absolute -top-6 -left-6 glass-card p-4 rounded-2xl border border-amber-glow/40 shadow-2xl hidden sm:flex items-center gap-3 animate-float-slow"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-amber-glow/20 border border-amber-glow flex items-center justify-center text-amber-bright text-lg"
+                >
+                  <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-cream-50">
+                    Nursery to SS3
+                  </div>
+                  <div class="text-[10px] text-amber-soft font-mono">
+                    100% Comprehensive
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 02: LEGACY & VISION (ABOUT) ================= -->
+      <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+          <!-- Station Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-cream-100/10 pb-8"
+          >
+            <div class="space-y-2">
+              <div
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+              >
+                <i class="bi bi-signpost-split-fill"></i>
+                <span>STATION 02 • ABOUT US</span>
+              </div>
+              <h2
+                class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+              >
+                Inspiring Excellence Through <br />
+                <span class="text-gradient-amber"
+                  >Knowledge & Moral Values</span
+                >
+              </h2>
+            </div>
+            <p class="text-sm text-cream-200/70 max-w-md font-light">
+              Ummul Qura Science Academy is a forward-thinking institution
+              dedicated to nurturing young minds through academic excellence,
+              STEM innovation, and strong Islamic moral foundations.
+            </p>
+          </div>
+
+          <!-- Feature & Founder Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <!-- Left: Founder & Director Card -->
+            <div
+              class="lg:col-span-5 glass-card glass-card-hover p-8 rounded-3xl border border-amber-glow/30 flex flex-col justify-between relative overflow-hidden"
+            >
+              <div
+                class="absolute -right-10 -bottom-10 w-48 h-48 bg-amber-glow/10 rounded-full blur-3xl pointer-events-none"
+              ></div>
+
+              <div class="space-y-6 relative z-10">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-mono text-amber-bright uppercase tracking-widest"
+                    >LEADERSHIP VISION</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-coffee-800 text-amber-soft border border-amber-glow/20"
+                    >15+ Years Experience</span
+                  >
+                </div>
+
+                <div class="flex items-center gap-5">
+                  <div
+                    class="w-24 h-24 rounded-2xl overflow-hidden glass-card border border-amber-glow/40 shadow-xl shrink-0"
+                  >
+                    <img
+                      src="director.png"
+                      alt="Jibril Shirama"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="font-heading text-xl font-bold text-cream-50">
+                      Jibril Shirama
+                    </h3>
+                    <p
+                      class="text-xs text-amber-bright font-mono uppercase tracking-wider"
+                    >
+                      Director & Founder
+                    </p>
+                    <p class="text-xs text-cream-200/60 mt-1">
+                      Ummul-Qura Science Academy
+                    </p>
+                  </div>
+                </div>
+
+                <blockquote
+                  class="text-sm text-cream-200/90 italic font-light leading-relaxed border-l-2 border-amber-glow/50 pl-4 py-1"
+                >
+                  "Our commitment is to develop future leaders who are not only
+                  intellectually equipped to excel in a technological world, but
+                  also ethically grounded and socially responsible."
+                </blockquote>
+              </div>
+
+              <!-- Direct Hotline Box -->
+              <div
+                class="mt-8 pt-6 border-t border-cream-100/10 flex items-center justify-between relative z-10"
+              >
+                <div>
+                  <p class="text-[10px] font-mono text-cream-200/50 uppercase">
+                    DIRECT INQUIRY LINE
+                  </p>
+                  <p class="text-sm font-bold font-mono text-amber-bright">
+                    +234 80 6527 9069
+                  </p>
+                </div>
+                <a
+                  href="tel:+2348065279069"
+                  class="w-10 h-10 rounded-xl bg-amber-glow/20 hover:bg-amber-glow text-amber-bright hover:text-coffee-950 flex items-center justify-center transition-colors"
+                >
+                  <i class="bi bi-telephone-fill"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Core Mission Pillars & Curriculum Grid -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4"
+              >
+                <div
+                  class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl"
+                >
+                  <i class="bi bi-cpu-fill"></i>
+                </div>
+                <h4 class="font-heading text-lg font-bold text-cream-50">
+                  STEM-Driven Learning
+                </h4>
+                <p class="text-xs text-cream-200/70 leading-relaxed">
+                  Integrating physics, robotics, computer science, and data
+                  analysis early to foster scientific curiosity and innovation.
+                </p>
+              </div>
+
+              <div
+                class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4"
+              >
+                <div
+                  class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl"
+                >
+                  <i class="bi bi-book-half"></i>
+                </div>
+                <h4 class="font-heading text-lg font-bold text-cream-50">
+                  Integrated Islamic Studies
+                </h4>
+                <p class="text-xs text-cream-200/70 leading-relaxed">
+                  Combining Qur'anic memorization (Tahfeez), Hadith studies, and
+                  Islamic ethics with modern academic standards.
+                </p>
+              </div>
+
+              <div
+                class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4"
+              >
+                <div
+                  class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl"
+                >
+                  <i class="bi bi-award-fill"></i>
+                </div>
+                <h4 class="font-heading text-lg font-bold text-cream-50">
+                  Qualified Educators
+                </h4>
+                <p class="text-xs text-cream-200/70 leading-relaxed">
+                  Passionate faculty members dedicated to student mentorship,
+                  character development, and academic success.
+                </p>
+              </div>
+
+              <div
+                class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4"
+              >
+                <div
+                  class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl"
+                >
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <h4 class="font-heading text-lg font-bold text-cream-50">
+                  Safe & Modern Facilities
+                </h4>
+                <p class="text-xs text-cream-200/70 leading-relaxed">
+                  Equipped with clean WASH infrastructure, gender-dedicated
+                  secondary campuses, and secure modern learning spaces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 03: ACADEMY LINE (SECTIONS) ================= -->
+      <section
+        id="academy"
+        class="py-24 px-4 sm:px-6 lg:px-8 relative bg-coffee-900/40"
+      >
+        <div class="max-w-7xl mx-auto space-y-12">
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div
+              class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+            >
+              <i class="bi bi-train-front-fill"></i>
+              <span>STATION 03 • SCHOOL DIVISIONS</span>
+            </div>
+            <h2
+              class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+            >
+              Three Specialized
+              <span class="text-gradient-amber">Educational Divisions</span>
+            </h2>
+            <p class="text-sm text-cream-200/70 font-light">
+              Explore our structured learning pathways designed for every stage
+              of your child's developmental journey.
+            </p>
+          </div>
+
+          <!-- Alpine Dynamic Tabs -->
+          <div class="flex justify-center" x-data="{ sectionTab: 'all' }">
+            <div class="w-full space-y-8">
+              <!-- Tab Control Buttons -->
+              <div
+                class="flex flex-wrap items-center justify-center gap-2 glass-card p-2 rounded-2xl max-w-2xl mx-auto border border-amber-glow/20"
+              >
+                <button
+                  @click="sectionTab = 'all'"
+                  class="px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
+                  :class="sectionTab === 'all' ? 'bg-amber-glow text-coffee-950 shadow-lg' : 'text-cream-200/70 hover:text-cream-50'"
+                >
+                  All Sections
+                </button>
+                <button
+                  @click="sectionTab = 'primary'"
+                  class="px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
+                  :class="sectionTab === 'primary' ? 'bg-amber-glow text-coffee-950 shadow-lg' : 'text-cream-200/70 hover:text-cream-50'"
+                >
+                  Primary & Nursery
+                </button>
+                <button
+                  @click="sectionTab = 'girls'"
+                  class="px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
+                  :class="sectionTab === 'girls' ? 'bg-amber-glow text-coffee-950 shadow-lg' : 'text-cream-200/70 hover:text-cream-50'"
+                >
+                  Girls Section
+                </button>
+                <button
+                  @click="sectionTab = 'boys'"
+                  class="px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all"
+                  :class="sectionTab === 'boys' ? 'bg-amber-glow text-coffee-950 shadow-lg' : 'text-cream-200/70 hover:text-cream-50'"
+                >
+                  Boys Section
+                </button>
+              </div>
+
+              <!-- Division Cards Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Primary Section Card -->
+                <div
+                  x-show="sectionTab === 'all' || sectionTab === 'primary'"
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="opacity-0 scale-95"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden flex flex-col justify-between"
+                >
+                  <div class="h-64 relative overflow-hidden bg-coffee-800">
+                    <img
+                      src="principal_primary_section.png"
+                      alt="Primary Section"
+                      class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                    ></div>
+                    <span
+                      class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-mono uppercase font-bold bg-amber-glow text-coffee-950 shadow"
+                    >
+                      Nursery & Primary
+                    </span>
+                  </div>
+                  <div
+                    class="p-6 space-y-4 flex-1 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 class="font-heading text-xl font-bold text-cream-50">
+                        Primary & Early Childhood
+                      </h3>
+                      <p class="text-xs text-cream-200/70 mt-2 leading-relaxed">
+                        Fostering foundational literacy, numeracy, Quranic
+                        recitation, and early scientific inquiry in a safe,
+                        caring environment.
+                      </p>
+                    </div>
+                    <div
+                      class="pt-4 border-t border-cream-100/10 flex items-center justify-between"
+                    >
+                      <div>
+                        <div
+                          class="text-[10px] font-mono text-cream-200/50 uppercase"
+                        >
+                          SECTION HEAD
+                        </div>
+                        <div class="text-xs font-bold text-amber-bright">
+                          Aminu Suleiman
+                        </div>
+                      </div>
+                      <span class="text-xs font-mono text-cream-200/60"
+                        >Primary Principal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Girls Section Card -->
+                <div
+                  x-show="sectionTab === 'all' || sectionTab === 'girls'"
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="opacity-0 scale-95"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden flex flex-col justify-between"
+                >
+                  <div class="h-64 relative overflow-hidden bg-coffee-800">
+                    <img
+                      src="principal_lady.png"
+                      alt="Girls Section"
+                      class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                    ></div>
+                    <span
+                      class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-mono uppercase font-bold bg-amber-glow text-coffee-950 shadow"
+                    >
+                      Girls Secondary
+                    </span>
+                  </div>
+                  <div
+                    class="p-6 space-y-4 flex-1 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 class="font-heading text-xl font-bold text-cream-50">
+                        Girls Secondary Academy
+                      </h3>
+                      <p class="text-xs text-cream-200/70 mt-2 leading-relaxed">
+                        Dedicated female secondary section focused on academic
+                        distinction, leadership empowerment, and Islamic
+                        modesty.
+                      </p>
+                    </div>
+                    <div
+                      class="pt-4 border-t border-cream-100/10 flex items-center justify-between"
+                    >
+                      <div>
+                        <div
+                          class="text-[10px] font-mono text-cream-200/50 uppercase"
+                        >
+                          SECTION HEAD
+                        </div>
+                        <div class="text-xs font-bold text-amber-bright">
+                          Amina Yunusa Idi
+                        </div>
+                      </div>
+                      <span class="text-xs font-mono text-cream-200/60"
+                        >Girls Principal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Boys Section Card -->
+                <div
+                  x-show="sectionTab === 'all' || sectionTab === 'boys'"
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="opacity-0 scale-95"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden flex flex-col justify-between"
+                >
+                  <div class="h-64 relative overflow-hidden bg-coffee-800">
+                    <img
+                      src="principal_secondary.png"
+                      alt="Boys Section"
+                      class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                    ></div>
+                    <span
+                      class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-mono uppercase font-bold bg-amber-glow text-coffee-950 shadow"
+                    >
+                      Boys Secondary
+                    </span>
+                  </div>
+                  <div
+                    class="p-6 space-y-4 flex-1 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 class="font-heading text-xl font-bold text-cream-50">
+                        Boys Secondary Academy
+                      </h3>
+                      <p class="text-xs text-cream-200/70 mt-2 leading-relaxed">
+                        Rigorous STEM, physics, technology, and
+                        character-building curriculum preparing young men for
+                        university and global careers.
+                      </p>
+                    </div>
+                    <div
+                      class="pt-4 border-t border-cream-100/10 flex items-center justify-between"
+                    >
+                      <div>
+                        <div
+                          class="text-[10px] font-mono text-cream-200/50 uppercase"
+                        >
+                          SECTION HEAD
+                        </div>
+                        <div class="text-xs font-bold text-amber-bright">
+                          Abdullahi Aliyu
+                        </div>
+                      </div>
+                      <span class="text-xs font-mono text-cream-200/60"
+                        >Boys Principal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 04: INNOVATION HUB (SERVICES & STEM) ================= -->
+      <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-cream-100/10 pb-8"
+          >
+            <div class="space-y-2">
+              <div
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+              >
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>STATION 04 • STEM & SERVICES</span>
+              </div>
+              <h2
+                class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+              >
+                Academy Services & <br />
+                <span class="text-gradient-amber">STEM Ecosystem</span>
+              </h2>
+            </div>
+            <p class="text-sm text-cream-200/70 max-w-md font-light">
+              We are dedicated to delivering exceptional education that inspires
+              knowledge, fosters creativity, and builds resilient moral
+              character.
+            </p>
+          </div>
+
+          <!-- Services Feature Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4 relative group"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-coffee-800/80 border border-amber-glow/40 flex items-center justify-center text-amber-bright text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3 class="font-heading text-lg font-bold text-cream-50">
+                Quality Education
+              </h3>
+              <p class="text-xs text-cream-200/70 leading-relaxed">
+                Structured curriculum ensuring students receive a strong
+                academic foundation across science, arts, and languages.
+              </p>
+            </div>
+
+            <div
+              class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4 relative group"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-coffee-800/80 border border-amber-glow/40 flex items-center justify-center text-amber-bright text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <h3 class="font-heading text-lg font-bold text-cream-50">
+                STEM Excellence
+              </h3>
+              <p class="text-xs text-cream-200/70 leading-relaxed">
+                Emphasizing Science, Technology, Engineering, and Mathematics to
+                prepare students for futuristic careers.
+              </p>
+            </div>
+
+            <div
+              class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4 relative group"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-coffee-800/80 border border-amber-glow/40 flex items-center justify-center text-amber-bright text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="bi bi-heart-pulse-fill"></i>
+              </div>
+              <h3 class="font-heading text-lg font-bold text-cream-50">
+                Student Support
+              </h3>
+              <p class="text-xs text-cream-200/70 leading-relaxed">
+                Providing comprehensive counseling, academic mentorship, and
+                personal guidance for well-rounded growth.
+              </p>
+            </div>
+
+            <div
+              class="glass-card glass-card-hover p-6 rounded-3xl border border-cream-100/10 space-y-4 relative group"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-coffee-800/80 border border-amber-glow/40 flex items-center justify-center text-amber-bright text-2xl group-hover:scale-110 transition-transform"
+              >
+                <i class="bi bi-trophy-fill"></i>
+              </div>
+              <h3 class="font-heading text-lg font-bold text-cream-50">
+                Extracurriculars
+              </h3>
+              <p class="text-xs text-cream-200/70 leading-relaxed">
+                Engaging student clubs, science competitions, robotics teams,
+                and sports building teamwork & leadership skills.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive 2050 Tuition & Admission Calculator Widget -->
+          <div
+            class="glass-card p-8 rounded-3xl border border-amber-glow/40 relative overflow-hidden"
+            x-data="{ gradeLevel: 'primary', termType: 'annual' }"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-4">
+                <span
+                  class="px-3 py-1 rounded-full text-[10px] font-mono uppercase bg-amber-glow/20 text-amber-bright border border-amber-glow/40"
+                >
+                  INTERACTIVE ESTIMATOR 2050
+                </span>
+                <h3
+                  class="font-heading text-2xl sm:text-3xl font-bold text-cream-50"
+                >
+                  Admission Fee & Curriculum Preview
+                </h3>
+                <p class="text-xs text-cream-200/70 leading-relaxed">
+                  Select your child's targeted grade level to view curriculum
+                  highlights and fee structures transparently.
+                </p>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                  <button
+                    @click="gradeLevel = 'nursery'"
+                    class="px-4 py-2 rounded-xl text-xs font-semibold border transition-all"
+                    :class="gradeLevel === 'nursery' ? 'bg-amber-glow text-coffee-950 border-amber-glow' : 'border-cream-100/20 text-cream-200'"
+                  >
+                    Nursery Section
+                  </button>
+                  <button
+                    @click="gradeLevel = 'primary'"
+                    class="px-4 py-2 rounded-xl text-xs font-semibold border transition-all"
+                    :class="gradeLevel === 'primary' ? 'bg-amber-glow text-coffee-950 border-amber-glow' : 'border-cream-100/20 text-cream-200'"
+                  >
+                    Primary 1 - 6
+                  </button>
+                  <button
+                    @click="gradeLevel = 'jss'"
+                    class="px-4 py-2 rounded-xl text-xs font-semibold border transition-all"
+                    :class="gradeLevel === 'jss' ? 'bg-amber-glow text-coffee-950 border-amber-glow' : 'border-cream-100/20 text-cream-200'"
+                  >
+                    Junior Secondary (JSS)
+                  </button>
+                  <button
+                    @click="gradeLevel = 'sss'"
+                    class="px-4 py-2 rounded-xl text-xs font-semibold border transition-all"
+                    :class="gradeLevel === 'sss' ? 'bg-amber-glow text-coffee-950 border-amber-glow' : 'border-cream-100/20 text-cream-200'"
+                  >
+                    Senior Secondary (SSS STEM)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Dynamic Calculator Output Box -->
+              <div
+                class="lg:col-span-5 glass-card p-6 rounded-2xl border border-amber-glow/30 space-y-4"
+              >
+                <div
+                  class="flex items-center justify-between border-b border-cream-100/10 pb-3"
+                >
+                  <span class="text-xs font-mono text-cream-200/60 uppercase"
+                    >TARGET LEVEL</span
+                  >
+                  <span
+                    class="text-xs font-bold font-mono text-amber-bright uppercase"
+                    x-text="gradeLevel.toUpperCase()"
+                  ></span>
+                </div>
+
+                <div class="space-y-2 text-xs text-cream-200/80">
+                  <div class="flex items-center justify-between">
+                    <span>STEM & Computer Lab Access</span>
+                    <i class="bi bi-check-circle-fill text-amber-glow"></i>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span>Tahfeez & Qur'anic Studies</span>
+                    <i class="bi bi-check-circle-fill text-amber-glow"></i>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span>Health & WASH Sanitation Access</span>
+                    <i class="bi bi-check-circle-fill text-amber-glow"></i>
+                  </div>
+                </div>
+
+                <div
+                  class="pt-4 border-t border-cream-100/10 flex items-center justify-between"
+                >
+                  <span class="text-xs text-cream-200/70 font-mono"
+                    >Admission Guidance</span
+                  >
+                  <button
+                    @click="openAdmissionModal = true"
+                    class="px-4 py-2 rounded-xl bg-amber-glow text-coffee-950 text-xs font-bold uppercase tracking-wider shadow"
+                  >
+                    Request Portal Link
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 05: HOLO GALLERY (PORTFOLIO) ================= -->
+      <section
+        id="portfolio"
+        class="py-24 px-4 sm:px-6 lg:px-8 relative bg-coffee-900/30"
+      >
+        <div class="max-w-7xl mx-auto space-y-12">
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div
+              class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+            >
+              <i class="bi bi-images"></i>
+              <span>STATION 05 • PHOTO GALLERY</span>
+            </div>
+            <h2
+              class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+            >
+              Visual Archives &
+              <span class="text-gradient-amber">Campus Life</span>
+            </h2>
+            <p class="text-sm text-cream-200/70 font-light">
+              Explore vibrant glimpses of student learning, science
+              laboratories, cultural celebrations, and campus achievements.
+            </p>
+          </div>
+
+          <!-- Alpine Gallery Grid with Lightbox -->
+          <div
+            class="space-y-6"
+            x-data="{ activeFilter: 'all', selectedImage: null }"
+          >
+            <!-- Gallery Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2">
+              <button
+                @click="activeFilter = 'all'"
+                class="px-4 py-2 rounded-xl text-xs font-semibold transition-all border"
+                :class="activeFilter === 'all' ? 'bg-amber-glow text-coffee-950 border-amber-glow shadow' : 'glass-card border-cream-100/10 text-cream-200'"
+              >
+                All Moments
+              </button>
+              <button
+                @click="activeFilter = 'stem'"
+                class="px-4 py-2 rounded-xl text-xs font-semibold transition-all border"
+                :class="activeFilter === 'stem' ? 'bg-amber-glow text-coffee-950 border-amber-glow shadow' : 'glass-card border-cream-100/10 text-cream-200'"
+              >
+                STEM & Labs
+              </button>
+              <button
+                @click="activeFilter = 'campus'"
+                class="px-4 py-2 rounded-xl text-xs font-semibold transition-all border"
+                :class="activeFilter === 'campus' ? 'bg-amber-glow text-coffee-950 border-amber-glow shadow' : 'glass-card border-cream-100/10 text-cream-200'"
+              >
+                Campus Life
+              </button>
+            </div>
+
+            <!-- Gallery Images Masonry Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <template x-for="item in galleryItems" :key="item.id">
+                <div
+                  x-show="activeFilter === 'all' || item.category === activeFilter"
+                  @click="selectedImage = item"
+                  class="glass-card glass-card-hover rounded-2xl overflow-hidden cursor-pointer group relative h-64 border border-amber-glow/20"
+                >
+                  <img
+                    :src="item.src"
+                    :alt="item.title"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-coffee-950/90 via-coffee-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end"
+                  >
+                    <span
+                      class="text-[10px] font-mono text-amber-bright uppercase"
+                      x-text="item.category"
+                    ></span>
+                    <h4
+                      class="text-sm font-bold text-cream-50"
+                      x-text="item.title"
+                    ></h4>
+                    <div
+                      class="mt-2 flex items-center gap-2 text-xs text-amber-soft"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                      <span>Click to view Holo-Archive</span>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div
+              x-show="selectedImage"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              @click.self="selectedImage = null"
+              class="fixed inset-0 z-50 glass-nav backdrop-blur-2xl flex items-center justify-center p-4"
+              style="display: none"
+            >
+              <div
+                class="max-w-4xl w-full glass-card p-4 rounded-3xl border border-amber-glow/40 relative space-y-4"
+              >
+                <button
+                  @click="selectedImage = null"
+                  class="absolute top-4 right-4 w-10 h-10 rounded-full bg-coffee-800 text-cream-50 flex items-center justify-center border border-amber-glow/30 hover:bg-amber-glow hover:text-coffee-950"
+                >
+                  <i class="bi bi-x-lg"></i>
+                </button>
+                <div class="max-h-[75vh] overflow-hidden rounded-2xl">
+                  <img
+                    :src="selectedImage?.src"
+                    :alt="selectedImage?.title"
+                    class="w-full h-full object-contain mx-auto"
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-between border-t border-cream-100/10 pt-3 px-2"
+                >
+                  <div>
+                    <h3
+                      class="font-heading text-lg font-bold text-cream-50"
+                      x-text="selectedImage?.title"
+                    ></h3>
+                    <p
+                      class="text-xs text-cream-200/70"
+                      x-text="selectedImage?.desc"
+                    ></p>
+                  </div>
+                  <span
+                    class="text-xs font-mono px-3 py-1 rounded-full bg-amber-glow/20 text-amber-bright uppercase"
+                    x-text="selectedImage?.category"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 06: LEADERSHIP COUNCIL (TEAM) ================= -->
+      <section id="team" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-cream-100/10 pb-8"
+          >
+            <div class="space-y-2">
+              <div
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+              >
+                <i class="bi bi-people-fill"></i>
+                <span>STATION 06 • SCHOOL LEADERSHIP</span>
+              </div>
+              <h2
+                class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+              >
+                Academy Principal <br />
+                <span class="text-gradient-amber">Command Council</span>
+              </h2>
+            </div>
+            <p class="text-sm text-cream-200/70 max-w-md font-light">
+              Meet the distinguished principals leading academic innovation,
+              moral guidance, and campus growth across all sections.
+            </p>
+          </div>
+
+          <!-- Team Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Principal Primary -->
+            <div
+              class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden group"
+            >
+              <div class="h-80 relative overflow-hidden bg-coffee-900">
+                <img
+                  src="principal_primary_section.png"
+                  alt="Aminu Suleiman"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                ></div>
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-amber-bright uppercase"
+                    >PRIMARY DIVISION</span
+                  >
+                  <div
+                    class="flex items-center gap-2 text-cream-200/60 text-sm"
+                  >
+                    <i
+                      class="bi bi-linkedin hover:text-amber-glow cursor-pointer"
+                    ></i>
+                    <i
+                      class="bi bi-envelope-fill hover:text-amber-glow cursor-pointer"
+                    ></i>
+                  </div>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-cream-50">
+                  Aminu Suleiman
+                </h3>
+                <p class="text-xs text-cream-200/70">
+                  Principal • Primary & Early Learning Section
+                </p>
+              </div>
+            </div>
+
+            <!-- Principal Girls -->
+            <div
+              class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden group"
+            >
+              <div class="h-80 relative overflow-hidden bg-coffee-900">
+                <img
+                  src="principal_lady.png"
+                  alt="Amina Yunusa Idi"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                ></div>
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-amber-bright uppercase"
+                    >GIRLS DIVISION</span
+                  >
+                  <div
+                    class="flex items-center gap-2 text-cream-200/60 text-sm"
+                  >
+                    <i
+                      class="bi bi-linkedin hover:text-amber-glow cursor-pointer"
+                    ></i>
+                    <i
+                      class="bi bi-envelope-fill hover:text-amber-glow cursor-pointer"
+                    ></i>
+                  </div>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-cream-50">
+                  Amina Yunusa Idi
+                </h3>
+                <p class="text-xs text-cream-200/70">
+                  Principal • Girls Secondary Division
+                </p>
+              </div>
+            </div>
+
+            <!-- Principal Boys -->
+            <div
+              class="glass-card glass-card-hover rounded-3xl border border-amber-glow/30 overflow-hidden group"
+            >
+              <div class="h-80 relative overflow-hidden bg-coffee-900">
+                <img
+                  src="principal_secondary.png"
+                  alt="Abdullahi Aliyu"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"
+                ></div>
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-amber-bright uppercase"
+                    >BOYS DIVISION</span
+                  >
+                  <div
+                    class="flex items-center gap-2 text-cream-200/60 text-sm"
+                  >
+                    <i
+                      class="bi bi-linkedin hover:text-amber-glow cursor-pointer"
+                    ></i>
+                    <i
+                      class="bi bi-envelope-fill hover:text-amber-glow cursor-pointer"
+                    ></i>
+                  </div>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-cream-50">
+                  Abdullahi Aliyu
+                </h3>
+                <p class="text-xs text-cream-200/70">
+                  Principal • Boys Secondary Division
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 07: VOICE MATRIX (TESTIMONIALS & IMPACT) ================= -->
+      <section
+        id="testimonials"
+        class="py-24 px-4 sm:px-6 lg:px-8 relative bg-coffee-900/40"
+      >
+        <div class="max-w-7xl mx-auto space-y-16">
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div
+              class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+            >
+              <i class="bi bi-chat-quote-fill"></i>
+              <span>STATION 07 • TESTIMONIALS</span>
+            </div>
+            <h2
+              class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+            >
+              Voices of Our
+              <span class="text-gradient-amber">Alumni & Faculty</span>
+            </h2>
+            <p class="text-sm text-cream-200/70 font-light">
+              Hear directly from our graduates and teachers on how UQSA shaped
+              their technological and moral foundation.
+            </p>
+          </div>
+
+          <!-- Alpine Testimonial Slider / Carousel -->
+          <div class="max-w-4xl mx-auto" x-data="{ currentTestimonial: 0 }">
+            <div
+              class="glass-card p-8 md:p-12 rounded-3xl border border-amber-glow/40 relative shadow-2xl space-y-6"
+            >
+              <div class="flex items-center justify-between">
+                <i class="bi bi-quote text-4xl text-amber-glow/60"></i>
+                <div class="flex items-center gap-2">
+                  <template x-for="(t, idx) in testimonials" :key="idx">
+                    <button
+                      @click="currentTestimonial = idx"
+                      class="w-3 h-3 rounded-full transition-all"
+                      :class="currentTestimonial === idx ? 'bg-amber-glow scale-125' : 'bg-coffee-700'"
+                    ></button>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Active Testimonial Content -->
+              <div class="space-y-6">
+                <p
+                  class="text-base sm:text-lg text-cream-50 font-light leading-relaxed italic"
+                  x-text="testimonials[currentTestimonial].text"
+                ></p>
+
+                <div
+                  class="flex items-center gap-4 pt-4 border-t border-cream-100/10"
+                >
+                  <img
+                    :src="testimonials[currentTestimonial].image"
+                    :alt="testimonials[currentTestimonial].name"
+                    class="w-14 h-14 rounded-full object-cover glass-card border border-amber-glow/40"
+                  />
+                  <div>
+                    <h4
+                      class="font-heading text-lg font-bold text-amber-bright"
+                      x-text="testimonials[currentTestimonial].name"
+                    ></h4>
+                    <p
+                      class="text-xs text-cream-200/70"
+                      x-text="testimonials[currentTestimonial].role"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Next / Prev Controls -->
+              <div class="flex justify-end gap-3 pt-2">
+                <button
+                  @click="currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length"
+                  class="w-10 h-10 rounded-xl glass-card border border-amber-glow/30 flex items-center justify-center text-cream-50 hover:bg-amber-glow hover:text-coffee-950 transition-colors"
+                >
+                  <i class="bi bi-arrow-left"></i>
+                </button>
+                <button
+                  @click="currentTestimonial = (currentTestimonial + 1) % testimonials.length"
+                  class="w-10 h-10 rounded-xl glass-card border border-amber-glow/30 flex items-center justify-center text-cream-50 hover:bg-amber-glow hover:text-coffee-950 transition-colors"
+                >
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION FAQ & ADMISSIONS PREVIEW ================= -->
+      <section class="py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-5xl mx-auto space-y-12">
+          <div class="text-center max-w-2xl mx-auto space-y-3">
+            <span
+              class="font-mono text-xs text-amber-bright uppercase tracking-widest"
+              >TRANSPARENCY HUB</span
+            >
+            <h2
+              class="font-heading text-3xl sm:text-4xl font-bold text-cream-50"
+            >
+              Frequently Asked Questions
+            </h2>
+            <p class="text-xs text-cream-200/70">
+              Find immediate answers regarding school operations, admissions,
+              and campus facilities.
+            </p>
+          </div>
+
+          <!-- Alpine Accordion -->
+          <div class="space-y-4" x-data="{ openFaq: 1 }">
+            <div
+              class="glass-card rounded-2xl border border-cream-100/10 overflow-hidden"
+            >
+              <button
+                @click="openFaq = (openFaq === 1 ? 0 : 1)"
+                class="w-full p-6 text-left font-heading font-bold text-cream-50 flex items-center justify-between gap-4 hover:text-amber-bright transition-colors"
+              >
+                <span>Where is Ummul Qura Science Academy located?</span>
+                <i
+                  class="bi"
+                  :class="openFaq === 1 ? 'bi-chevron-up text-amber-glow' : 'bi-chevron-down text-cream-200/40'"
+                ></i>
+              </button>
+              <div
+                x-show="openFaq === 1"
+                x-collapse
+                class="px-6 pb-6 text-xs text-cream-200/80 leading-relaxed border-t border-cream-100/10 pt-4"
+              >
+                Ummul Qura Science Academy is located opposite State Lowcost,
+                Old Kano Road, Azare, Bauchi State, Nigeria.
+              </div>
+            </div>
+
+            <div
+              class="glass-card rounded-2xl border border-cream-100/10 overflow-hidden"
+            >
+              <button
+                @click="openFaq = (openFaq === 2 ? 0 : 2)"
+                class="w-full p-6 text-left font-heading font-bold text-cream-50 flex items-center justify-between gap-4 hover:text-amber-bright transition-colors"
+              >
+                <span>What educational levels does the academy offer?</span>
+                <i
+                  class="bi"
+                  :class="openFaq === 2 ? 'bi-chevron-up text-amber-glow' : 'bi-chevron-down text-cream-200/40'"
+                ></i>
+              </button>
+              <div
+                x-show="openFaq === 2"
+                x-collapse
+                class="px-6 pb-6 text-xs text-cream-200/80 leading-relaxed border-t border-cream-100/10 pt-4"
+              >
+                The academy offers comprehensive education across Nursery,
+                Primary, Junior Secondary (JSS), and Senior Secondary (SSS STEM)
+                levels.
+              </div>
+            </div>
+
+            <div
+              class="glass-card rounded-2xl border border-cream-100/10 overflow-hidden"
+            >
+              <button
+                @click="openFaq = (openFaq === 3 ? 0 : 3)"
+                class="w-full p-6 text-left font-heading font-bold text-cream-50 flex items-center justify-between gap-4 hover:text-amber-bright transition-colors"
+              >
+                <span
+                  >Is Ummul Qura Science Academy a day or boarding school?</span
+                >
+                <i
+                  class="bi"
+                  :class="openFaq === 3 ? 'bi-chevron-up text-amber-glow' : 'bi-chevron-down text-cream-200/40'"
+                ></i>
+              </button>
+              <div
+                x-show="openFaq === 3"
+                x-collapse
+                class="px-6 pb-6 text-xs text-cream-200/80 leading-relaxed border-t border-cream-100/10 pt-4"
+              >
+                Ummul Qura Science Academy currently operates as a premier Day
+                School with dedicated morning and afternoon academic tracks.
+              </div>
+            </div>
+
+            <div
+              class="glass-card rounded-2xl border border-cream-100/10 overflow-hidden"
+            >
+              <button
+                @click="openFaq = (openFaq === 4 ? 0 : 4)"
+                class="w-full p-6 text-left font-heading font-bold text-cream-50 flex items-center justify-between gap-4 hover:text-amber-bright transition-colors"
+              >
+                <span
+                  >What sanitation & WASH achievements has UQSA completed?</span
+                >
+                <i
+                  class="bi"
+                  :class="openFaq === 4 ? 'bi-chevron-up text-amber-glow' : 'bi-chevron-down text-cream-200/40'"
+                ></i>
+              </button>
+              <div
+                x-show="openFaq === 4"
+                x-collapse
+                class="px-6 pb-6 text-xs text-cream-200/80 leading-relaxed border-t border-cream-100/10 pt-4"
+              >
+                UQSA constructed 45 modern toilet facilities to maintain high
+                Water, Sanitation, and Hygiene (WASH) standards for student and
+                staff health.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATION 08: QUANTUM GATE (CONTACT & MAP) ================= -->
+      <section
+        id="contact"
+        class="py-24 px-4 sm:px-6 lg:px-8 relative bg-coffee-900/50"
+      >
+        <div class="max-w-7xl mx-auto space-y-16">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-cream-100/10 pb-8"
+          >
+            <div class="space-y-2">
+              <div
+                class="inline-flex items-center gap-2 font-mono text-xs text-amber-bright uppercase tracking-widest"
+              >
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>STATION 08 • CONTACT & MAP</span>
+              </div>
+              <h2
+                class="font-heading text-3xl sm:text-5xl font-bold text-cream-50"
+              >
+                Connect With <br />
+                <span class="text-gradient-amber">UQSA Campus Command</span>
+              </h2>
+            </div>
+            <p class="text-sm text-cream-200/70 max-w-md font-light">
+              Have questions or ready to enroll your child? Contact our
+              administrative desk or visit our Azare campus.
+            </p>
+          </div>
+
+          <!-- Contact Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Info Panel -->
+            <div class="lg:col-span-5 space-y-6">
+              <div
+                class="glass-card p-6 rounded-3xl border border-amber-glow/30 space-y-6"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl shrink-0"
+                  >
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-cream-50 text-sm">
+                      Campus Address
+                    </h4>
+                    <p class="text-xs text-cream-200/70 mt-1 leading-relaxed">
+                      Opposite State Lowcost, Old Kano Road, Azare 751101,
+                      Bauchi State, Nigeria.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-start gap-4 pt-4 border-t border-cream-100/10"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl shrink-0"
+                  >
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-cream-50 text-sm">
+                      Phone Line
+                    </h4>
+                    <p
+                      class="text-xs text-amber-bright font-mono mt-1 font-semibold"
+                    >
+                      +234 80 6527 9069
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-start gap-4 pt-4 border-t border-cream-100/10"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-coffee-800 border border-amber-glow/30 flex items-center justify-center text-amber-bright text-xl shrink-0"
+                  >
+                    <i class="bi bi-envelope-at-fill"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-cream-50 text-sm">
+                      Official Email
+                    </h4>
+                    <p class="text-xs text-cream-200/80 font-mono mt-1">
+                      support@uqsaazare.sch.ng
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direct Message Form Card -->
+              <div
+                class="glass-card p-6 rounded-3xl border border-cream-100/10 space-y-4"
+              >
+                <h4 class="font-heading text-lg font-bold text-cream-50">
+                  Transmit Direct Inquiry
+                </h4>
+
+                <form
+                  @submit.preventDefault="alert('Thank you! Your message has been transmitted to UQSA Admissions Desk.')"
+                  class="space-y-3"
+                >
+                  <input
+                    type="text"
+                    placeholder="Parent/Guardian Full Name"
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:outline-none focus:border-amber-glow"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address or Phone Number"
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:outline-none focus:border-amber-glow"
+                  />
+                  <textarea
+                    rows="3"
+                    placeholder="Your inquiry message..."
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:outline-none focus:border-amber-glow"
+                  ></textarea>
+                  <button
+                    type="submit"
+                    class="w-full py-3 rounded-xl bg-amber-glow text-coffee-950 font-bold text-xs uppercase tracking-wider hover:bg-amber-bright shadow-lg transition-colors"
+                  >
+                    Send Transmission
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Interactive Google Maps Embed -->
+            <div
+              class="lg:col-span-7 glass-card rounded-3xl border border-amber-glow/30 overflow-hidden relative min-h-[450px]"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d458.6246320201145!2d10.173963913617742!3d11.662349874953899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sng!4v1744183697302!5m2!1sen!2sng"
+                width="100%"
+                height="100%"
+                style="border: 0; min-height: 450px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FUTURISTIC 2050 FOOTER -->
+    <footer
+      class="relative z-10 glass-nav border-t border-amber-glow/20 pt-16 pb-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-4 md:col-span-2">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl glass-card p-1 border border-amber-glow/40"
+              >
+                <img
+                  src="logo-1.png"
+                  onerror="this.src = 'logo.png'"
+                  alt="UQSA Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <span
+                class="font-heading text-xl font-bold tracking-wider text-cream-50"
+                >UQSA AZARE</span
+              >
+            </div>
+            <p
+              class="text-xs text-cream-200/70 max-w-sm font-light leading-relaxed"
+            >
+              Ummul-Qura Science Academy Azare • Empowering future leaders
+              through academic excellence, scientific innovation, and moral
+              integrity.
+            </p>
+            <div class="text-xs font-arabic text-amber-soft">
+              هدفنا تربية الأولاد
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4
+              class="font-heading text-sm font-bold text-cream-50 uppercase tracking-wider"
+            >
+              Subway Stations
+            </h4>
+            <ul class="space-y-2 text-xs text-cream-200/70">
+              <template x-for="st in stations" :key="st.id">
+                <li>
+                  <a
+                    :href="'#' + st.id"
+                    @click.preventDefault="navigateToStation(st.id)"
+                    class="hover:text-amber-bright transition-colors flex items-center gap-1.5"
+                  >
+                    <span
+                      class="font-mono text-[10px] text-amber-glow"
+                      x-text="st.code"
+                    ></span>
+                    <span x-text="st.name"></span>
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4
+              class="font-heading text-sm font-bold text-cream-50 uppercase tracking-wider"
+            >
+              Campus Contact
+            </h4>
+            <div class="space-y-2 text-xs text-cream-200/70">
+              <p>Old Kano Road, Azare, Bauchi State</p>
+              <p class="font-mono text-amber-bright">+234 80 6527 9069</p>
+              <p class="font-mono">support@uqsaazare.sch.ng</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-cream-100/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-200/50"
+        >
+          <p>© 2050 Ummul-Qura Science Academy Azare. All Rights Reserved.</p>
+          <p class="font-mono text-[11px]">
+            Powered By <strong class="text-amber-soft">Cyber Net System</strong>
+          </p>
+        </div>
       </div>
     </footer>
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-    <script
-      id="builder-vendors-bootstrap-js"
-      src="https://builder.bootstrapmade.com/static/vendors/bootstrap/js/bootstrap.bundle.min.js?v=14"
-    ></script>
-    <script
-      id="builder-vendors-aos-js"
-      src="https://builder.bootstrapmade.com/static/vendors/aos/aos.js?v=14 "
-    ></script>
-    <script
-      id="vendor-js-php-email-form"
-      src="https://builder.bootstrapmade.com/static/vendors/php-email-form/validate.js?v=14"
-    ></script>
-    <script
-      id="vendor-js-purecounter"
-      src="https://builder.bootstrapmade.com/static/vendors/purecounter/purecounter_vanilla.js?v=14"
-    ></script>
-    <script
-      id="vendor-js-glightbox"
-      src="https://builder.bootstrapmade.com/static/vendors/glightbox/js/glightbox.min.js?v=14"
-    ></script>
-    <script
-      id="vendor-js-imagesloaded"
-      src="https://builder.bootstrapmade.com/static/vendors/imagesloaded/imagesloaded.pkgd.min.js?v=14"
-    ></script>
-    <script
-      id="vendor-js-isotope-layout"
-      src="https://builder.bootstrapmade.com/static/vendors/isotope-layout/isotope.pkgd.min.js?v=14"
-    ></script>
-    <script
-      id="vendor-js-swiper"
-      src="https://builder.bootstrapmade.com/static/vendors/swiper/swiper-bundle.min.js?v=14"
-    ></script>
-    <script id="builder-vendors-js"></script>
-    <script id="js-scrolled" class="components-js">
-      (() => {
-        /**
-         * Apply .scrolled class to the body as the page is scrolled down
-         */
-        function toggleScrolled() {
-          const selectBody = document.querySelector("body");
-          const selectHeader = document.querySelector("#header");
-          if (
-            !selectHeader.classList.contains("scroll-up-sticky") &&
-            !selectHeader.classList.contains("sticky-top") &&
-            !selectHeader.classList.contains("fixed-top")
-          )
-            return;
-          window.scrollY > 100
-            ? selectBody.classList.add("scrolled")
-            : selectBody.classList.remove("scrolled");
-        }
 
-        document.addEventListener("scroll", toggleScrolled);
-        window.addEventListener("load", toggleScrolled);
-      })();
-    </script>
-    <script id="js-scroll-up-sticky" class="components-js">
-      (() => {
-        /**
-         * Scroll up sticky header to headers with .scroll-up-sticky class
-         */
-        let lastScrollTop = 0;
-        window.addEventListener("scroll", function () {
-          const selectHeader = document.querySelector("#header");
-          if (!selectHeader.classList.contains("scroll-up-sticky")) return;
+    <!-- ADMISSION MODAL (Alpine.js) -->
+    <div
+      x-show="openAdmissionModal"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click.self="openAdmissionModal = false"
+      class="fixed inset-0 z-50 glass-nav backdrop-blur-2xl flex items-center justify-center p-4"
+      style="display: none"
+    >
+      <div
+        class="max-w-xl w-full glass-card p-8 rounded-3xl border border-amber-glow/40 relative space-y-6"
+      >
+        <button
+          @click="openAdmissionModal = false"
+          class="absolute top-6 right-6 w-9 h-9 rounded-full bg-coffee-800 text-cream-50 flex items-center justify-center border border-amber-glow/30 hover:bg-amber-glow hover:text-coffee-950"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
 
-          let scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop;
+        <div class="space-y-2">
+          <span
+            class="px-3 py-1 rounded-full text-[10px] font-mono uppercase bg-amber-glow/20 text-amber-bright border border-amber-glow/30"
+          >
+            OFFICIAL ADMISSION PORTAL
+          </span>
+          <h3 class="font-heading text-2xl font-bold text-cream-50">
+            Apply to UQSA Azare
+          </h3>
+          <p class="text-xs text-cream-200/70">
+            Submit parent and prospective student details to receive immediate
+            enrollment instructions.
+          </p>
+        </div>
 
-          if (
-            scrollTop > lastScrollTop &&
-            scrollTop > selectHeader.offsetHeight
-          ) {
-            selectHeader.style.setProperty("position", "sticky", "important");
-            selectHeader.style.top = `-${header.offsetHeight + 50}px`;
-          } else if (scrollTop > selectHeader.offsetHeight) {
-            selectHeader.style.setProperty("position", "sticky", "important");
-            selectHeader.style.top = "0";
-          } else {
-            selectHeader.style.removeProperty("top");
-            selectHeader.style.removeProperty("position");
-          }
-          lastScrollTop = scrollTop;
-        });
-      })();
-    </script>
-    <script id="js-mobile-nav-toggle" class="components-js">
-      (() => {
-        /**
-         * Mobile nav toggle
-         */
-        const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+        <form
+          @submit.preventDefault="openAdmissionModal = false; alert('Application received! UQSA admissions team will contact you shortly.')"
+          class="space-y-4"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input
+              type="text"
+              placeholder="Child's Full Name"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:border-amber-glow focus:outline-none"
+            />
+            <select
+              required
+              class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 focus:border-amber-glow focus:outline-none"
+            >
+              <option value="">Select Entry Level...</option>
+              <option value="nursery">Nursery Section</option>
+              <option value="primary">Primary Section</option>
+              <option value="jss">Junior Secondary (JSS)</option>
+              <option value="sss">Senior Secondary (SSS STEM)</option>
+            </select>
+          </div>
+          <input
+            type="text"
+            placeholder="Parent/Guardian Full Name"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:border-amber-glow focus:outline-none"
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number (+234)"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-coffee-950/80 border border-cream-100/10 text-xs text-cream-50 placeholder-cream-200/40 focus:border-amber-glow focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="w-full py-3.5 rounded-xl bg-amber-glow text-coffee-950 font-bold text-xs uppercase tracking-wider hover:bg-amber-bright shadow-lg shadow-amber-glow/20"
+          >
+            Submit Admission Application
+          </button>
+        </form>
+      </div>
+    </div>
 
-        function mobileNavToogle() {
-          document.querySelector("body").classList.toggle("mobile-nav-active");
-          mobileNavToggleBtn.classList.toggle("bi-list");
-          mobileNavToggleBtn.classList.toggle("bi-x");
-        }
-        if (mobileNavToggleBtn) {
-          mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
-        }
+    <!-- SCRIPT DATA & ALPINE LOGIC -->
+    <script>
+      function subwayApp() {
+        return {
+          currentStation: "hero",
+          scrollPercent: 0,
+          isScrolled: false,
+          mobileNavOpen: false,
+          openAdmissionModal: false,
+          audioMuted: true,
+          audioCtx: null,
 
-        /**
-         * Hide mobile nav on same-page/hash links
-         */
-        document.querySelectorAll("#navmenu a").forEach((navmenu) => {
-          navmenu.addEventListener("click", () => {
-            if (document.querySelector(".mobile-nav-active")) {
-              mobileNavToogle();
-            }
-          });
-        });
-      })();
-    </script>
-    <script id="js-mobile-nav-dropdown" class="components-js">
-      (() => {
-        /**
-         * Toggle mobile nav dropdowns
-         */
-        document
-          .querySelectorAll(".navmenu .toggle-dropdown")
-          .forEach((navmenu) => {
-            navmenu.addEventListener("click", function (e) {
-              e.preventDefault();
-              this.parentNode.classList.toggle("active");
-              this.parentNode.nextElementSibling.classList.toggle(
-                "dropdown-active"
-              );
-              e.stopImmediatePropagation();
-            });
-          });
-      })();
-    </script>
-    <script id="js-scroll-top" class="components-js">
-      (() => {
-        /**
-         * Scroll top button
-         */
-        let scrollTop = document.querySelector(".scroll-top");
+          stations: [
+            {
+              id: "hero",
+              code: "01",
+              name: "Home",
+              desc: "Welcome & School Overview",
+            },
+            {
+              id: "about",
+              code: "02",
+              name: "About Us",
+              desc: "Our Vision, Mission & Founder",
+            },
+            {
+              id: "academy",
+              code: "03",
+              name: "Divisions",
+              desc: "Primary, Girls & Boys Sections",
+            },
+            {
+              id: "services",
+              code: "04",
+              name: "STEM & Services",
+              desc: "Curriculum & Academic Support",
+            },
+            {
+              id: "portfolio",
+              code: "05",
+              name: "Gallery",
+              desc: "Campus Photos & Activity Archives",
+            },
+            {
+              id: "team",
+              code: "06",
+              name: "Leadership",
+              desc: "School Principals & Staff",
+            },
+            {
+              id: "testimonials",
+              code: "07",
+              name: "Testimonials",
+              desc: "Alumni & Staff Voices",
+            },
+            {
+              id: "contact",
+              code: "08",
+              name: "Contact Us",
+              desc: "Admissions, Location & Map",
+            },
+          ],
 
-        function toggleScrollTop() {
-          if (scrollTop) {
-            window.scrollY > 100
-              ? scrollTop.classList.add("active")
-              : scrollTop.classList.remove("active");
-          }
-        }
-        scrollTop.addEventListener("click", (e) => {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
+          galleryItems: [
+            {
+              id: 1,
+              src: "galary/11.png",
+              title: "STEM Physics Experiment",
+              category: "stem",
+              desc: "Students testing wave motion in modern physics lab.",
+            },
+            {
+              id: 2,
+              src: "galary/4.png",
+              title: "Robotics & Micro-controllers",
+              category: "stem",
+              desc: "Practical hands-on electronics assembly.",
+            },
+            {
+              id: 3,
+              src: "galary/12.png",
+              title: "Quranic & Tahfeez Circle",
+              category: "campus",
+              desc: "Students engaged in Quranic memorization session.",
+            },
+            {
+              id: 4,
+              src: "galary/1.png",
+              title: "Primary Science Fair",
+              category: "campus",
+              desc: "Early childhood science projects presentation.",
+            },
+            {
+              id: 5,
+              src: "galary/2.png",
+              title: "Girls Secondary Debate",
+              category: "campus",
+              desc: "Empowered female leaders in inter-school debate.",
+            },
+            {
+              id: 6,
+              src: "galary/3.png",
+              title: "Computer Lab Data Center",
+              category: "stem",
+              desc: "Equipped IT suites with high speed fiber network.",
+            },
+            {
+              id: 7,
+              src: "galary/5.png",
+              title: "WASH Sanitation Facility",
+              category: "campus",
+              desc: "Modern hygiene standards for student safety.",
+            },
+            {
+              id: 8,
+              src: "galary/6.png",
+              title: "Sports & Athletics Day",
+              category: "campus",
+              desc: "Physical fitness and teamwork competitions.",
+            },
+          ],
 
-        window.addEventListener("load", toggleScrollTop);
-        document.addEventListener("scroll", toggleScrollTop);
-      })();
-    </script>
-    <script id="js-purecounter" class="components-js">
-      (() => {
-        /**
-         * Initiate Pure Counter
-         */
-        new PureCounter();
-      })();
-    </script>
-    <script id="js-init-swiper" class="components-js">
-      (() => {
-        /**
-         * Init swiper sliders
-         */
-        function initSwiper() {
-          document
-            .querySelectorAll(".init-swiper")
-            .forEach(function (swiperElement) {
-              let config = JSON.parse(
-                swiperElement.querySelector(".swiper-config").innerHTML.trim()
-              );
+          testimonials: [
+            {
+              name: "Ali Mustapha Shettima",
+              role: "Web Developer & Ethical Hacker (UQSA Alumnus)",
+              text: "Ummul Qura Science Academy (UQSA) was the bedrock of my career in Web Development and Cybersecurity. The strong foundation in problem-solving and analytical thinking I gained in Physics under Mr. Yusuf equipped me with the skills to tackle complex tech challenges. UQSA also instilled core values from my Qur’anic background, which continues to guide my ethical approach.",
+              image: "testimonials/1.png",
+            },
+            {
+              name: "Balkisu Muhammad",
+              role: "Form Mistress of Primary 6B",
+              text: "Ummul-Qura makaranta ce da take dauke da bangarori guda uku, wato Nursery, Primary da kuma Secondary. Makaranta ce da aka gina ta domin tarbiyyar al'umma. Shugaban wannan makaranta yana karfafa tarbiyyar yara fiye da komai saboda samun ilimi mai amfani a fannin zamani.",
+              image: "testimonials/2.png",
+            },
+          ],
 
-              if (swiperElement.classList.contains("swiper-tab")) {
-                initSwiperWithCustomPagination(swiperElement, config);
-              } else {
-                new Swiper(swiperElement, config);
-              }
-            });
-        }
+          initApp() {
+            this.updateSubwayScroll();
+          },
 
-        window.addEventListener("load", initSwiper);
-      })();
-    </script>
-    <script id="js-glightbox" class="components-js">
-      (() => {
-        /**
-         * Initiate glightbox
-         */
-        const glightbox = GLightbox({
-          selector: ".glightbox",
-        });
-      })();
-    </script>
-    <script id="js-isotope-layout" class="components-js">
-      (() => {
-        /**
-         * Init isotope layout and filters
-         */
-        document
-          .querySelectorAll(".isotope-layout")
-          .forEach(function (isotopeItem) {
-            let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
-            let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
-            let sort =
-              isotopeItem.getAttribute("data-sort") ?? "original-order";
-
-            let initIsotope;
-            imagesLoaded(
-              isotopeItem.querySelector(".isotope-container"),
-              function () {
-                initIsotope = new Isotope(
-                  isotopeItem.querySelector(".isotope-container"),
-                  {
-                    itemSelector: ".isotope-item",
-                    layoutMode: layout,
-                    filter: filter,
-                    sortBy: sort,
-                  }
-                );
-              }
+          updateSubwayScroll() {
+            const scrollTop = window.scrollY;
+            const docHeight =
+              document.documentElement.scrollHeight - window.innerHeight;
+            this.scrollPercent = Math.min(
+              100,
+              Math.max(0, (scrollTop / docHeight) * 100),
             );
+            this.isScrolled = scrollTop > 60;
 
-            isotopeItem
-              .querySelectorAll(".isotope-filters li")
-              .forEach(function (filters) {
-                filters.addEventListener(
-                  "click",
-                  function () {
-                    isotopeItem
-                      .querySelector(".isotope-filters .filter-active")
-                      .classList.remove("filter-active");
-                    this.classList.add("filter-active");
-                    initIsotope.arrange({
-                      filter: this.getAttribute("data-filter"),
-                    });
-                    if (typeof aosInit === "function") {
-                      aosInit();
-                    }
-                  },
-                  false
-                );
-              });
-          });
-      })();
+            // Detect current station based on section offset
+            for (let st of this.stations) {
+              const el = document.getElementById(st.id);
+              if (el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= 200 && rect.bottom >= 200) {
+                  if (this.currentStation !== st.id) {
+                    this.currentStation = st.id;
+                    this.playChime();
+                  }
+                  break;
+                }
+              }
+            }
+          },
+
+          getCurrentStationInfo() {
+            return (
+              this.stations.find((s) => s.id === this.currentStation) ||
+              this.stations[0]
+            );
+          },
+
+          navigateToStation(id) {
+            this.currentStation = id;
+            this.playChime();
+            const el = document.getElementById(id);
+            if (el) {
+              const yOffset = -80;
+              const y =
+                el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          },
+
+          scrollToNextStation() {
+            const currentIndex = this.stations.findIndex(
+              (s) => s.id === this.currentStation,
+            );
+            const nextIndex = (currentIndex + 1) % this.stations.length;
+            this.navigateToStation(this.stations[nextIndex].id);
+          },
+
+          toggleAudio() {
+            this.audioMuted = !this.audioMuted;
+            if (!this.audioMuted) {
+              this.playChime();
+            }
+          },
+
+          playChime() {
+            if (this.audioMuted) return;
+            try {
+              if (!this.audioCtx) {
+                this.audioCtx = new (
+                  window.AudioContext || window.webkitAudioContext
+                )();
+              }
+              const osc = this.audioCtx.createOscillator();
+              const gain = this.audioCtx.createGain();
+              osc.type = "sine";
+              osc.frequency.setValueAtTime(587.33, this.audioCtx.currentTime); // D5
+              osc.frequency.exponentialRampToValueAtTime(
+                880,
+                this.audioCtx.currentTime + 0.15,
+              ); // A5
+              gain.gain.setValueAtTime(0.08, this.audioCtx.currentTime);
+              gain.gain.exponentialRampToValueAtTime(
+                0.001,
+                this.audioCtx.currentTime + 0.3,
+              );
+              osc.connect(gain);
+              gain.connect(this.audioCtx.destination);
+              osc.start();
+              osc.stop(this.audioCtx.currentTime + 0.3);
+            } catch (e) {
+              console.log("Audio feedback not initialized");
+            }
+          },
+        };
+      }
     </script>
-    <script id="builder-js"></script>
   </body>
 </html>
