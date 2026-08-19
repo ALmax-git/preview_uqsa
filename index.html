@@ -281,7 +281,7 @@
         >
           <template x-for="st in stations" :key="st.id">
             <a
-              :href="'#' + st.id"
+              :href="st.href"
               @click.preventDefault="navigateToStation(st.id)"
               class="px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 flex items-center gap-1.5"
               :class="currentStation === st.id ? 'bg-amber-glow text-coffee-950 font-semibold shadow-[0_0_15px_rgba(229,152,71,0.4)]' : 'text-cream-200/80 hover:text-cream-50 hover:bg-coffee-800/50'"
@@ -294,13 +294,13 @@
         <!-- CTA & Controls -->
         <div class="flex items-center gap-3">
           <!-- Admission Teleport Button -->
-          <button
-            @click="openAdmissionModal = true"
-            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-coffee-600 via-amber-glow to-coffee-600 text-coffee-950 font-semibold text-xs tracking-wider uppercase shadow-lg shadow-amber-glow/20 hover:shadow-amber-glow/40 hover:scale-105 active:scale-95 transition-all duration-300"
+          <a href="/results"
+            
+            class="sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-coffee-600 via-amber-glow to-coffee-600 text-coffee-950 font-semibold text-xs tracking-wider uppercase shadow-lg shadow-amber-glow/20 hover:shadow-amber-glow/40 hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <i class="bi bi-rocket-takeoff-fill"></i>
             <span>My Results</span>
-          </button>
+          </a>
 
           <!-- Mobile Menu Trigger -->
           <button
@@ -335,7 +335,7 @@
         <div class="grid grid-cols-2 gap-2">
           <template x-for="st in stations" :key="st.id">
             <a
-              :href="'#' + st.id"
+              :href="st.href"
               @click="navigateToStation(st.id); mobileNavOpen = false"
               class="px-4 py-2.5 rounded-xl text-xs font-medium glass-card border flex items-center gap-2"
               :class="currentStation === st.id ? 'border-amber-glow bg-amber-glow/20 text-amber-bright' : 'border-cream-100/10 text-cream-200'"
@@ -2058,42 +2058,49 @@
           stations: [
             {
               id: "hero",
+	      href: "/#hero",
               code: "01",
               name: "Home",
               desc: "Welcome & School Overview",
             },
             {
               id: "about",
+	      href: "/#about",
               code: "02",
               name: "About Us",
               desc: "Our Vision, Mission & Founder",
             },
             {
               id: "academy",
+	      href:"/#academy",
               code: "03",
               name: "Divisions",
               desc: "Primary, Girls & Boys Sections",
             },
             {
               id: "services",
+	      href: "/#services",
               code: "04",
               name: "STEM & Services",
               desc: "Curriculum & Academic Support",
             },
             {
               id: "portfolio",
+ 	      href: "/#portfolio",
               code: "05",
               name: "Gallery",
               desc: "Campus Photos & Activity Archives",
             },
             {
               id: "team",
+	      href: "/#team",
               code: "06",
               name: "Leadership",
               desc: "School Principals & Staff",
             },
             {
               id: "testimonials",
+	      href: "/#testimonials",
               code: "07",
               name: "Testimonials",
               desc: "Alumni & Staff Voices",
@@ -2110,9 +2117,9 @@
             {
               id: 1,
               src: "galary/11.png",
-              title: "STEM Physics Experiment",
+              title: "One Big Family",
               category: "stem",
-              desc: "Students testing wave motion in modern physics lab.",
+              desc: "Empowered female leaders in inter-school debate.",
             },
             {
               id: 2,
